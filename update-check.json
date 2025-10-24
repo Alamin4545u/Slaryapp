@@ -1,6 +1,6 @@
 {
-  "latestVersionCode": 2,
-  "latestVersionName": "1.2",
+  "latestVersionCode": 1,
+  "latestVersionName": "1.0",
   "apkUrl": "https://github.com/Alamin4545u/Slaryapp/releases/download/v2/Over.Time.3.apk",
   "releaseNotes": [
     "নতুন ফিচার যোগ করা হয়েছে।",
@@ -8,5 +8,6 @@
   ],
   "startapp_app_id": "209898928" 
 }
+
 
 
