@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10152f">
+  <meta name="description" content="Overtime App ডাউনলোড করুন — আপনার কাজের সময় ও overtime সহজে পরিচালনা করুন।">
+  <title>Overtime App — সময়ের হিসাব, সহজ সমাধান</title>
+  <style>
+    :root{--bg:#0b1024;--panel:#131a35;--text:#f6f7ff;--muted:#b6bfdc;--blue:#5a8cff;--purple:#a56bff;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(112,70,255,.2),transparent 35%),radial-gradient(ellipse at 0% 30%,rgba(47,124,255,.16),transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.15rem;letter-spacing:.2px}
+    .logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--purple));box-shadow:0 8px 28px #5a65ff55}
+    nav{display:flex;gap:26px;color:var(--muted);font-size:.95rem}nav a:hover{color:white}
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;padding:72px 0 82px}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);background:#ffffff08;border-radius:99px;padding:7px 13px;color:#d6dfff;font-size:.84rem}
+    .dot{width:8px;height:8px;border-radius:50%;background:#7c9dff;box-shadow:0 0 12px #7c9dff}
+    h1{font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:1.08;letter-spacing:-.045em;margin:22px 0 20px}
+    .gradient{background:linear-gradient(90deg,#7eb5ff,#bd8bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:1.1rem;color:var(--muted);max-width:570px;margin:0 0 28px}
+    .actions{display:flex;gap:13px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border-radius:14px;font-weight:750;border:1px solid var(--line);transition:.2s;cursor:pointer}
+    .btn-primary{background:linear-gradient(110deg,#4c8dff,#9662ff);box-shadow:0 12px 35px #5b72ff38;border:0}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 38px #5b72ff55}.btn-secondary{background:#ffffff08}.btn-secondary:hover{background:#ffffff12}
+    .hint{font-size:.82rem;color:#8e9abb;margin-top:14px}
+    .visual{min-height:400px;display:grid;place-items:center;position:relative}.orb{position:absolute;width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,#4c8dff,#9b61ff);filter:blur(70px);opacity:.34}
+    .phone{position:relative;width:min(285px,80%);padding:12px;border:1px solid #ffffff35;border-radius:36px;background:linear-gradient(150deg,#29365f,#11172e 60%);box-shadow:0 30px 90px #0008;transform:rotate(3deg)}
+    .screen{border-radius:27px;padding:22px 17px 20px;background:linear-gradient(180deg,#19264b,#10162d);min-height:440px;overflow:hidden}.speaker{height:5px;width:72px;border-radius:9px;background:#6e789b;margin:0 auto 25px}
+    .app-title{font-size:1.12rem;font-weight:800}.app-sub{color:#9eacd0;font-size:.78rem}.time-card{margin-top:22px;padding:17px;border-radius:18px;background:linear-gradient(135deg,#477fff,#8659ee)}
+    .time-card small{opacity:.85}.hours{font-size:2rem;font-weight:850;line-height:1.3}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mini{background:#ffffff0b;border:1px solid #ffffff0d;border-radius:15px;padding:12px}.mini strong{display:block;font-size:1.15rem}.mini span{font-size:.72rem;color:#aab7d8}.chart{margin-top:14px;background:#ffffff08;border-radius:15px;padding:13px}.bars{height:60px;display:flex;align-items:end;gap:8px;margin-top:10px}.bars i{display:block;flex:1;border-radius:5px 5px 2px 2px;background:linear-gradient(#8a83ff,#4b91ff)}
+    section{padding:62px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 34px}.section-head h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.2;margin:0 0 12px}.section-head p{color:var(--muted);margin:0}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.feature{padding:24px;border-radius:20px;background:linear-gradient(150deg,#ffffff0b,#ffffff04);border:1px solid var(--line)}.feature-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#4c8dff33,#a56bff33);color:#b9caff;margin-bottom:16px}.feature h3{margin:0 0 8px;font-size:1.08rem}.feature p{color:var(--muted);margin:0;font-size:.94rem}
+    .download-panel{border:1px solid #ffffff20;border-radius:28px;padding:clamp(26px,5vw,48px);background:linear-gradient(120deg,#315fdc33,#8b52e833),#111831;display:flex;align-items:center;justify-content:space-between;gap:28px}.download-panel h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:0 0 12px}.download-panel p{color:var(--muted);margin:0}.download-panel .actions{flex-shrink:0}
+    .faq{max-width:780px;margin:auto}.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:700}.faq details p{color:var(--muted);margin-bottom:0}
+    footer{border-top:1px solid var(--line);padding:26px 0;color:#9da9c8;font-size:.9rem}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .notice{display:none;margin-top:14px;padding:12px 14px;border:1px solid #ffce6a66;border-radius:12px;color:#ffdf9a;background:#ffce6a0b;font-size:.88rem}
+    @media(max-width:800px){nav{gap:14px}.hero{grid-template-columns:1fr;gap:20px;padding:48px 0 55px}.visual{min-height:420px}.features{grid-template-columns:1fr 1fr}.download-panel{align-items:flex-start;flex-direction:column}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1120px)}header{padding:16px 0}nav a:not(:last-child){display:none}.hero{padding-top:34px}.visual{min-height:380px}.screen{min-height:410px}.features{grid-template-columns:1fr}.actions .btn{width:100%}.download-panel .actions{width:100%}section{padding:46px 0}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="Overtime App home">
+      <span class="logo" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 9 9" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M12 7v5l3.5 2M15 3h6v6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span>Overtime<span class="gradient">App</span></span>
+    </a>
+    <nav aria-label="Main navigation"><a href="#features">ফিচার</a><a href="#download">ডাউনলোড</a><a href="#faq">FAQ</a></nav>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> আপনার সময়, আপনার নিয়ন্ত্রণে</span>
+        <h1>সময় ম্যানেজ করুন <span class="gradient">আরও সহজে।</span></h1>
+        <p class="lead">Overtime App-এর মাধ্যমে আপনার কাজের সময় ও overtime-এর হিসাব সহজভাবে পরিচালনা করুন। শুরু করতে Android অ্যাপটি ডাউনলোড করুন।</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="overtime.apk" download id="downloadTop">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 17v3h14v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Android App ডাউনলোড
+          </a>
+          <a class="btn btn-secondary" href="#features">ফিচার দেখুন <span aria-hidden="true">↘</span></a>
+        </div>
+        <p class="hint">Android-এর জন্য • APK ফাইল • ফ্রি ডাউনলোড</p>
+        <div class="notice" id="apkNotice">ডাউনলোড চালু করতে ওয়েবসাইটের ফোল্ডারে আপনার APK ফাইলটি <b>overtime.apk</b> নামে রাখুন।</div>
+      </div>
+      <div class="visual" aria-label="Overtime App-এর একটি illustrative preview">
+        <div class="orb"></div>
+        <div class="phone"><div class="screen">
+          <div class="speaker"></div>
+          <div class="app-title">Good evening 👋</div><div class="app-sub">আপনার কাজের সারাংশ</div>
+          <div class="time-card"><small>এই সপ্তাহে মোট সময়</small><div class="hours">42h 30m</div><small>আপনার সময়ের এক নজর</small></div>
+          <div class="mini-grid"><div class="mini"><span>Regular hours</span><strong>38h</strong></div><div class="mini"><span>Overtime</span><strong>4.5h</strong></div></div>
+          <div class="chart"><span style="font-size:.78rem;color:#aab7d8">সাপ্তাহিক কার্যক্রম</span><div class="bars"><i style="height:42%"></i><i style="height:68%"></i><i style="height:53%"></i><i style="height:90%"></i><i style="height:62%"></i><i style="height:78%"></i><i style="height:35%"></i></div></div>
+        </div></div>
+      </div>
+    </div>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head"><h2>আপনার প্রয়োজনীয় সবকিছু, <span class="gradient">এক জায়গায়</span></h2><p>কাজের সময়ের হিসাব আরও গোছানো রাখতে সহজ ও ব্যবহারবান্ধব অভিজ্ঞতা।</p></div>
+        <div class="features">
+          <article class="feature"><div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>সময় ট্র্যাকিং</h3><p>কাজের সময় ও অতিরিক্ত সময়ের হিসাব সহজে রাখুন।</p></article>
+          <article class="feature"><div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 15v-4m4 4V7m4 8V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h3>সহজ সারাংশ</h3><p>আপনার সময়ের হিসাব এক নজরে দেখতে সুবিধাজনক ডিজাইন।</p></article>
+          <article class="feature"><div class="feature-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5c0 4.5-3 7.5-7 10-4-2.5-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>সহজ ব্যবহার</h3><p>সহজ নেভিগেশন এবং ব্যবহারকারীবান্ধব অভিজ্ঞতার জন্য তৈরি।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap"><div class="download-panel">
+        <div><h2>Overtime App ব্যবহার শুরু করুন</h2><p>Android ফোনে অ্যাপটি ইনস্টল করতে APK ডাউনলোড করুন।</p></div>
+        <div class="actions"><a class="btn btn-primary" href="overtime.apk" download id="downloadBottom">⬇ APK ডাউনলোড</a></div>
+      </div></div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap"><div class="section-head"><h2>সাধারণ প্রশ্ন</h2><p>ডাউনলোড ও ইনস্টল সম্পর্কে কিছু তথ্য।</p></div>
+        <div class="faq">
+          <details><summary>কীভাবে অ্যাপ ডাউনলোড করব?</summary><p>“Android App ডাউনলোড” বাটনে চাপ দিন। APK ফাইল ডাউনলোড হলে সেটি খুলে ইনস্টল করার নির্দেশনা অনুসরণ করুন।</p></details>
+          <details><summary>ইনস্টল করতে সমস্যা হলে কী করব?</summary><p>ফাইলটি সম্পূর্ণ ডাউনলোড হয়েছে কি না যাচাই করুন এবং Android-এর নিরাপত্তা নির্দেশনা অনুসরণ করুন। শুধু বিশ্বাসযোগ্য উৎস থেকে APK ইনস্টল করুন।</p></details>
+          <details><summary>অ্যাপের আপডেট কোথায় পাব?</summary><p>এই ওয়েবসাইটে নতুন APK আপলোড করলে এখান থেকেই সর্বশেষ সংস্করণ ডাউনলোড করা যাবে।</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap foot"><span>© <span id="year"></span> Overtime App. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="mailto:contact@example.com">Contact</a></span></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Show a helpful note when the APK file hasn't been placed beside index.html.
+    ['downloadTop','downloadBottom'].forEach(function(id){
+      document.getElementById(id).addEventListener('click',function(){
+        // The static website cannot verify whether the APK file exists on the host.
+        // If the APK is missing, the browser will show a normal file-not-found response.
+      });
+    });
+  </script>
+</body>
+</html>
