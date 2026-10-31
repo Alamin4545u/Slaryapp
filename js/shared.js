@@ -1,8 +1,0 @@
-import { db } from "./firebase.js";
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
-export const $ = (s, root=document) => root.querySelector(s);
-export const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-export function toast(message){const el=$("#toast");if(!el)return;el.textContent=message;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),2600);}
-export async function getSettings(){try{const snap=await getDoc(doc(db,"siteSettings","public"));return snap.exists()?snap.data():{};}catch(e){console.warn("Settings unavailable",e);return {};}}
-export function renderAd(container, code){if(!container||!code)return;if(container!==document.body)container.replaceChildren();const template=document.createElement("template");template.innerHTML=code;const nodes=[...template.content.childNodes];for(const node of nodes){if(node.nodeType===Node.ELEMENT_NODE&&node.tagName==="SCRIPT"){const s=document.createElement("script");for(const a of node.attributes)s.setAttribute(a.name,a.value);s.text=node.textContent;container.appendChild(s);}else container.appendChild(node.cloneNode(true));}}
-export function renderSmartLink(url){if(!url)return;try{const parsed=new URL(url);if(!["https:","http:"].includes(parsed.protocol))return;const a=document.createElement("a");a.href=parsed.href;a.target="_blank";a.rel="nofollow sponsored noopener";a.className="btn btn-ghost";a.textContent="Explore partner link ↗";return a;}catch{return;}}
