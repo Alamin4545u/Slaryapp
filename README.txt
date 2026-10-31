@@ -10,3 +10,12 @@ NEXORA TOOLS — GITHUB PAGES DEPLOYMENT
 9. Test every tool and inspect the browser console after deployment.
 
 Static HTML/CSS/vanilla JavaScript; no backend, database, npm or build step. PDF tools load pdf-lib from jsDelivr and QR generation loads qrcode from jsDelivr, so those features need internet access to fetch the libraries. File processing is local in the browser. Add advertising or analytics only after reviewing provider policies and applicable consent requirements.
+
+
+AD NETWORK INTEGRATION
+----------------------
+The supplied ad snippets are included: bauval.org/14 and abscloud.org/1 global scripts;
+a 160x300 bauval.org/22 iframe in tool-page sidebars; bauval.org/21 responsive banners
+on the homepage and tool pages; and the araplhn.org sponsored direct link on the homepage
+and tool pages. Third-party scripts, redirects, content and availability are controlled by
+the providers and may change. Review provider terms and applicable advertising/privacy rules.
