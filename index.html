@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Telegram Earning App</title>
+  <title>Bkash Earn Free Tk - Telegram Mini App</title>
   
   <!-- FontAwesome Icons & Google Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,7 +17,7 @@
   <style>
     :root {
       --bg-color: #0b0f19;
-      --card-bg: rgba(23, 32, 54, 0.7);
+      --card-bg: rgba(23, 32, 54, 0.75);
       --card-border: rgba(255, 255, 255, 0.08);
       --primary: #00d26a;
       --primary-glow: rgba(0, 210, 106, 0.35);
@@ -47,7 +47,7 @@
       padding-bottom: 90px;
     }
 
-    /* Background Neon Lights */
+    /* Ambient Glow */
     .glow-circle {
       position: fixed;
       width: 250px;
@@ -60,9 +60,9 @@
     .glow-1 { top: -60px; left: -60px; background: var(--primary); }
     .glow-2 { bottom: 100px; right: -60px; background: var(--accent); }
 
-    /* Top Bar Profile */
+    /* Header Profile */
     header {
-      padding: 18px 20px 10px;
+      padding: 16px 20px 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -112,7 +112,7 @@
       gap: 5px;
     }
 
-    /* Container */
+    /* Main Container */
     .container {
       padding: 10px 20px;
       display: flex;
@@ -120,12 +120,12 @@
       gap: 16px;
     }
 
-    /* Balance Hero Card */
+    /* Balance Hero Box */
     .balance-card {
-      background: linear-gradient(145deg, rgba(30, 41, 69, 0.8), rgba(16, 23, 40, 0.95));
+      background: linear-gradient(145deg, rgba(30, 41, 69, 0.85), rgba(16, 23, 40, 0.95));
       border: 1px solid var(--card-border);
       border-radius: 24px;
-      padding: 24px 20px;
+      padding: 22px 20px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
       position: relative;
@@ -144,13 +144,13 @@
       color: var(--text-muted);
       font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       font-weight: 600;
     }
     .balance-amount {
       font-size: 38px;
       font-weight: 800;
-      margin: 10px 0;
+      margin: 8px 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -172,26 +172,26 @@
       color: var(--text-main);
     }
 
-    /* Main CTA: Watch Ad Button */
+    /* Ad Button */
     .ad-earn-btn {
+      width: 100%;
       background: linear-gradient(135deg, #00d26a, #009e52);
       border: none;
-      padding: 18px 24px;
+      padding: 16px 20px;
       border-radius: 20px;
       color: #fff;
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
       box-shadow: 0 8px 25px var(--primary-glow);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
+      transition: all 0.2s ease;
     }
     .ad-earn-btn:active {
       transform: scale(0.98);
-      filter: brightness(0.9);
+      filter: brightness(0.92);
     }
     .ad-earn-btn .btn-left {
       display: flex;
@@ -210,10 +210,10 @@
       font-size: 20px;
     }
     .ad-earn-btn .badge-reward {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 6px 14px;
+      background: rgba(0, 0, 0, 0.35);
+      padding: 6px 12px;
       border-radius: 30px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
       color: #fff;
       display: flex;
@@ -221,7 +221,7 @@
       gap: 5px;
     }
 
-    /* Quick Grid */
+    /* Grid Stats */
     .quick-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -230,7 +230,7 @@
     .stat-box {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      padding: 16px;
+      padding: 14px 16px;
       border-radius: 18px;
       display: flex;
       align-items: center;
@@ -250,7 +250,7 @@
     .stat-title { font-size: 12px; color: var(--text-muted); }
     .stat-val { font-size: 16px; font-weight: 700; margin-top: 2px; }
 
-    /* Sections / Tabs Content */
+    /* Tabs Content */
     .tab-content {
       display: none;
       animation: fadeIn 0.25s ease;
@@ -263,11 +263,10 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Task / List Items */
     .section-title {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
-      margin: 18px 0 10px;
+      margin: 16px 0 10px;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -310,7 +309,6 @@
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s;
     }
     .action-btn.completed {
       background: transparent;
@@ -318,16 +316,9 @@
       border-color: transparent;
     }
 
-    /* Withdraw Form */
-    .input-group {
-      margin-bottom: 14px;
-    }
-    .input-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      display: block;
-    }
+    /* Forms */
+    .input-group { margin-bottom: 14px; }
+    .input-label { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; display: block; }
     .form-input {
       width: 100%;
       background: rgba(255, 255, 255, 0.05);
@@ -338,9 +329,7 @@
       font-size: 15px;
       outline: none;
     }
-    .form-input:focus {
-      border-color: var(--primary);
-    }
+    .form-input:focus { border-color: var(--primary); }
     .submit-btn {
       width: 100%;
       background: var(--accent);
@@ -354,7 +343,7 @@
       margin-top: 8px;
     }
 
-    /* Bottom Navigation Bar */
+    /* Bottom Nav */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -381,14 +370,10 @@
       flex: 1;
       transition: all 0.2s;
     }
-    .nav-item i {
-      font-size: 20px;
-    }
-    .nav-item.active {
-      color: var(--primary);
-    }
+    .nav-item i { font-size: 20px; }
+    .nav-item.active { color: var(--primary); }
 
-    /* Toast Notification */
+    /* Alert Toast */
     .toast {
       position: fixed;
       top: 20px;
@@ -407,23 +392,20 @@
       z-index: 999;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
   </style>
 </head>
 <body>
 
-  <!-- Glows -->
   <div class="glow-circle glow-1"></div>
   <div class="glow-circle glow-2"></div>
 
   <!-- Header -->
   <header>
     <div class="user-pill">
-      <div class="avatar" id="userAvatar">U</div>
+      <div class="avatar" id="userAvatar">M</div>
       <div class="user-info">
-        <div class="username" id="userName">User</div>
+        <div class="username" id="userName">MD ALAMIN</div>
         <div class="badge">Verified Earner</div>
       </div>
     </div>
@@ -435,30 +417,29 @@
 
   <div class="container">
 
-    <!-- TAB 1: HOME / EARN -->
+    <!-- TAB 1: HOME / WATCH AD -->
     <div id="homeTab" class="tab-content active">
-      <!-- Balance Card -->
       <div class="balance-card">
         <div class="label">মোট অর্জিত কয়েন</div>
         <div class="balance-amount">
           <i class="fa-solid fa-coins"></i>
-          <span id="coinBalance">0</span>
+          <span id="coinBalance">450</span>
         </div>
         <div class="balance-sub">
-          <span>আজকের আয়: <strong id="todayCoins">0</strong></span>
+          <span>আজকের আয়: <strong id="todayCoins">450</strong></span>
           <span>•</span>
-          <span>মূল্য: <strong id="approxBdt">৳ 0.00</strong></span>
+          <span>মূল্য: <strong id="approxBdt">৳ 4.50</strong></span>
         </div>
       </div>
 
-      <!-- Main Watch Ad Button -->
+      <!-- Main Watch BengalAds Button -->
       <button class="ad-earn-btn" id="watchAdBtn" onclick="watchBengalAd()">
         <div class="btn-left">
           <div class="icon-box">
             <i class="fa-solid fa-play"></i>
           </div>
           <div>
-            <div style="font-size: 16px;">ভিডিও বিজ্ঞাপন দেখুন</div>
+            <div style="font-size: 16px;">বিজ্ঞাপন দেখুন</div>
             <div style="font-size: 12px; opacity: 0.85;">BengalAds স্পন্সরড</div>
           </div>
         </div>
@@ -468,7 +449,6 @@
         </div>
       </button>
 
-      <!-- Quick Stats -->
       <div class="quick-stats">
         <div class="stat-box">
           <div class="stat-icon ads"><i class="fa-solid fa-film"></i></div>
@@ -481,12 +461,11 @@
           <div class="stat-icon energy"><i class="fa-solid fa-battery-half"></i></div>
           <div>
             <div class="stat-title">দৈনিক এনার্জি</div>
-            <div class="stat-val"><span id="energyCount">100</span>%</div>
+            <div class="stat-val">100%</div>
           </div>
         </div>
       </div>
 
-      <!-- Daily Streak -->
       <div class="section-title">ডেইলি বোনাস</div>
       <div class="list-item">
         <div class="list-left">
@@ -507,7 +486,7 @@
         <div class="list-left">
           <div class="list-icon"><i class="fa-brands fa-telegram"></i></div>
           <div>
-            <div class="list-name">অফিসিয়াল টেলিগ্রাম চ্যানেল</div>
+            <div class="list-name">টেলিগ্রাম চ্যানেলে জয়েন করুন</div>
             <div class="list-reward">+150 কয়েন</div>
           </div>
         </div>
@@ -531,7 +510,7 @@
         <i class="fa-solid fa-users" style="font-size: 36px; color: var(--accent); margin-bottom: 8px;"></i>
         <h3 style="margin-bottom: 6px;">বন্ধুদের আমন্ত্রণ জানান</h3>
         <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
-          প্রতিটি ভ্যালিড রেফারে পাবেন <strong style="color: var(--primary);">+300 কয়েন</strong> এবং তার লাইফটাইম আয়ের ১০% বোনাস!
+          প্রতিটি সফল রেফারে পাবেন <strong style="color: var(--primary);">+300 কয়েন</strong> এবং তার আয়ের ১০% লাইফটাইম কমিশন!
         </p>
       </div>
       <button class="submit-btn" onclick="copyRefLink()" style="background: linear-gradient(135deg, var(--accent), #1d6fa5);">
@@ -539,20 +518,20 @@
       </button>
     </div>
 
-    <!-- TAB 4: WITHDRAW -->
+    <!-- TAB 4: WALLET / WITHDRAW -->
     <div id="walletTab" class="tab-content">
       <div class="balance-card">
         <div class="label">উইথড্র ব্যালেন্স</div>
         <div class="balance-amount">
-          <span id="withdrawCoins">0</span>
+          <span id="withdrawCoins">450</span>
           <span style="font-size: 18px; color: var(--text-muted); font-weight: 500;">কয়েন</span>
         </div>
         <p style="font-size: 12px; color: var(--text-muted);">মিনিমাম উইথড্র: 10,000 কয়েন (৳ 100)</p>
       </div>
 
-      <div class="section-title">টাকা উত্তোলনের মাধ্যম</div>
+      <div class="section-title">পেমেন্ট মেথড</div>
       <div class="input-group">
-        <label class="input-label">পেমেন্ট মেথড নির্বাচন করুন</label>
+        <label class="input-label">মাধ্যম নির্বাচন করুন</label>
         <select class="form-input" id="withdrawMethod">
           <option value="bkash">বিকাশ (Bkash)</option>
           <option value="nagad">নগদ (Nagad)</option>
@@ -562,13 +541,13 @@
       </div>
 
       <div class="input-group">
-        <label class="input-label">একাউন্ট নাম্বার বা ওয়ালেট এড্রেস</label>
+        <label class="input-label">একাউন্ট বা ওয়ালেট এড্রেস</label>
         <input type="text" class="form-input" id="withdrawAccount" placeholder="017XXXXXXXX">
       </div>
 
       <div class="input-group">
-        <label class="input-label">কয়েন পরিমাণ</label>
-        <input type="number" class="form-input" id="withdrawCoinsInput" placeholder="উদাঃ 10000">
+        <label class="input-label">কয়েন সংখ্যা</label>
+        <input type="number" class="form-input" id="withdrawCoinsInput" placeholder="যেমন: 10000">
       </div>
 
       <button class="submit-btn" onclick="requestWithdraw()">
@@ -578,7 +557,7 @@
 
   </div>
 
-  <!-- Bottom Nav -->
+  <!-- Bottom Navigation -->
   <nav class="bottom-nav">
     <div class="nav-item active" onclick="switchTab('homeTab', this)">
       <i class="fa-solid fa-house"></i>
@@ -598,49 +577,56 @@
     </div>
   </nav>
 
-  <!-- Toast Notification -->
+  <!-- Toast Notification Box -->
   <div class="toast" id="toast">
     <i class="fa-solid fa-circle-check" style="color: var(--primary);"></i>
     <span id="toastMsg">সফল হয়েছে!</span>
   </div>
 
   <script>
-    // --- 1. TELEGRAM WEB APP & USER SETUP ---
+    // --- 1. TELEGRAM WEBAPP INITIALIZATION ---
     const tg = window.Telegram?.WebApp;
     if (tg) {
-      tg.ready();
-      tg.expand();
+      try {
+        tg.ready();
+        tg.expand();
+      } catch (e) {
+        console.error("Telegram init error:", e);
+      }
     }
 
-    // Set user info from Telegram InitData
-    const user = tg?.initDataUnsafe?.user;
-    if (user) {
-      document.getElementById('userName').innerText = user.first_name || 'Earner';
-      document.getElementById('userAvatar').innerText = (user.first_name || 'U').charAt(0).toUpperCase();
+    // Set user profile details from Telegram
+    const tgUser = tg?.initDataUnsafe?.user;
+    if (tgUser) {
+      const name = `${tgUser.first_name || ''} ${tgUser.last_name || ''}`.trim() || 'MD ALAMIN';
+      document.getElementById('userName').innerText = name;
+      document.getElementById('userAvatar').innerText = name.charAt(0).toUpperCase();
     }
 
-    // --- 2. BENGAL ADS INITIALIZATION ---
-    // আপনার স্ক্রিনশটের তথ্য অনুযায়ী হুবহু আইডি বসানো হয়েছে
+    // --- 2. BENGALADS CONFIGURATION (হুবহু আপনার আইডি) ---
     const BENGAL_APP_ID = "tma_fec98fc694de96f690ac8933ab0e74cc89cb8d82";
     const BENGAL_FORMAT_ID = "int_f8d6d62c20ea66c9aeb935cb90081a5e10bc1cec";
 
+    // Auto-init BengalAds
     try {
-      if (window.BengalAds) {
+      if (window.BengalAds && typeof BengalAds.init === 'function') {
         BengalAds.init({
           appId: BENGAL_APP_ID,
           formatId: BENGAL_FORMAT_ID,
           telegramInitData: tg?.initData || ""
         });
-        console.log("BengalAds initialized successfully");
+        console.log("BengalAds Successfully Initialized!");
+      } else {
+        console.warn("BengalAds SDK not ready yet, will initialize on demand.");
       }
-    } catch (e) {
-      console.error("BengalAds init error:", e);
+    } catch (err) {
+      console.error("BengalAds Init Exception:", err);
     }
 
-    // --- 3. STATE & STORAGE ---
+    // --- 3. STORAGE & STATE ---
     let state = {
-      coins: parseInt(localStorage.getItem('coins')) || 0,
-      todayCoins: parseInt(localStorage.getItem('todayCoins')) || 0,
+      coins: parseInt(localStorage.getItem('coins')) || 450,
+      todayCoins: parseInt(localStorage.getItem('todayCoins')) || 450,
       adsWatched: parseInt(localStorage.getItem('adsWatched')) || 0,
       lastClaimDate: localStorage.getItem('lastClaimDate') || ""
     };
@@ -651,7 +637,6 @@
       document.getElementById('todayCoins').innerText = state.todayCoins.toLocaleString();
       document.getElementById('adsWatched').innerText = state.adsWatched;
       
-      // Conversion approx rate (100 coins = 1 BDT)
       const bdt = (state.coins / 100).toFixed(2);
       document.getElementById('approxBdt').innerText = `৳ ${bdt}`;
 
@@ -661,7 +646,6 @@
     }
     updateUI();
 
-    // Haptic feedback helper
     function triggerHaptic(type = 'medium') {
       try {
         if (tg?.HapticFeedback) {
@@ -670,15 +654,20 @@
       } catch (err) {}
     }
 
-    // Toast Popup
     function showToast(msg) {
       const toast = document.getElementById('toast');
       document.getElementById('toastMsg').innerText = msg;
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
+      setTimeout(() => toast.classList.remove('show'), 2800);
     }
 
-    // --- 4. SHOW BENGAL ADS FUNCTION ---
+    function awardCoins(amount) {
+      state.coins += amount;
+      state.todayCoins += amount;
+      updateUI();
+    }
+
+    // --- 4. WATCH BENGAL ADS (FIXED & TIME PROTECTED) ---
     let isAdLoading = false;
 
     async function watchBengalAd() {
@@ -690,31 +679,60 @@
       btn.innerHTML = `<div style="margin:auto; display:flex; align-items:center; gap:10px;"><i class="fa-solid fa-spinner fa-spin"></i> বিজ্ঞাপন লোড হচ্ছে...</div>`;
       isAdLoading = true;
 
+      // পিসিতে টেস্ট করলে ওয়ার্নিং দেওয়া
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (!isMobile) {
+        console.warn("Desktop/Web Telegram detected. BengalAds might not fill ads on PC.");
+      }
+
+      // ৮ সেকেন্ডের সেফটি টাইমার (বাটন যেন কখনো আটকে না থাকে)
+      const safetyTimeout = setTimeout(() => {
+        if (isAdLoading) {
+          isAdLoading = false;
+          btn.innerHTML = originalHTML;
+          showToast('বিজ্ঞাপন লোড হতে সময় লাগছে! ফোন থেকে চেষ্টা করুন।');
+        }
+      }, 8000);
+
       try {
         if (window.BengalAds && typeof BengalAds.showInterstitial === 'function') {
-          // BengalAds Interstitial Call
+          // Re-ensure init in case it was missed
+          try {
+            BengalAds.init({
+              appId: BENGAL_APP_ID,
+              formatId: BENGAL_FORMAT_ID,
+              telegramInitData: tg?.initData || ""
+            });
+          } catch(e){}
+
+          // Show Ad
           const result = await BengalAds.showInterstitial();
+          clearTimeout(safetyTimeout);
 
           if (result && result.status === 'closed') {
-            console.log('BengalAds interstitial closed');
             awardCoins(50);
             state.adsWatched += 1;
-            showToast('+50 কয়েন যোগ হয়েছে!');
+            showToast('সফল! +50 কয়েন যোগ হয়েছে!');
             triggerHaptic('heavy');
+          } else if (result && result.status === 'error') {
+            showToast('বিজ্ঞাপন শেষ হয়ে গেছে, কিছুক্ষণ পর চেষ্টা করুন!');
           } else {
-            showToast('বিজ্ঞাপন সম্পন্ন হয়নি!');
+            showToast('বিজ্ঞাপন সম্পূর্ণ দেখা হয়নি!');
           }
         } else {
-          // Fallback (for local testing outside Telegram)
+          clearTimeout(safetyTimeout);
+          // BengalAds SDK না পেলে ডেমো অ্যাড রেসপন্স
           setTimeout(() => {
             awardCoins(50);
             state.adsWatched += 1;
-            showToast('+50 কয়েন যুক্ত হয়েছে (ডেমো মোড)');
-          }, 1200);
+            showToast('+50 কয়েন যোগ হয়েছে (টেস্ট মোড)');
+            triggerHaptic('heavy');
+          }, 1000);
         }
       } catch (error) {
-        console.error("Ad Error:", error);
-        showToast('বিজ্ঞাপন লোড হতে সমস্যা হয়েছে!');
+        clearTimeout(safetyTimeout);
+        console.error("BengalAds Call Error:", error);
+        showToast('মোবাইল টেলিগ্রাম অ্যাপ দিয়ে ওপেন করুন!');
       } finally {
         btn.innerHTML = originalHTML;
         isAdLoading = false;
@@ -722,13 +740,7 @@
       }
     }
 
-    function awardCoins(amount) {
-      state.coins += amount;
-      state.todayCoins += amount;
-      updateUI();
-    }
-
-    // --- 5. TASKS & REWARDS ---
+    // --- 5. DAILY REWARD & TASKS ---
     function claimDailyReward() {
       const today = new Date().toDateString();
       if (state.lastClaimDate === today) {
@@ -760,29 +772,28 @@
 
     function copyRefLink() {
       triggerHaptic('light');
-      const userId = user?.id || '1234567';
-      const refUrl = `https://t.me/your_bot_username?start=ref_${userId}`;
+      const userId = tgUser?.id || '6709667337';
+      const refUrl = `https://t.me/EarnBDMini_bot?start=ref_${userId}`;
       navigator.clipboard.writeText(refUrl).then(() => {
         showToast('রেফারেল লিংক কপি করা হয়েছে!');
       });
     }
 
-    // --- 6. WITHDRAW LOGIC ---
+    // --- 6. WITHDRAW REQUEST ---
     function requestWithdraw() {
       const amount = parseInt(document.getElementById('withdrawCoinsInput').value);
       const account = document.getElementById('withdrawAccount').value.trim();
-      const method = document.getElementById('withdrawMethod').value;
 
       if (!account) {
-        showToast('অনুগ্রহ করে একাউন্ট নাম্বার দিন!');
+        showToast('একাউন্ট নাম্বার দিন!');
         return;
       }
       if (isNaN(amount) || amount < 10000) {
-        showToast('সর্বনিম্ন ১০,০০০ কয়েন হতে হবে!');
+        showToast('মিনিমাম উইথড্র ১০,০০০ কয়েন!');
         return;
       }
       if (amount > state.coins) {
-        showToast('আপনার একাউন্টে পর্যাপ্ত কয়েন নেই!');
+        showToast('পর্যাপ্ত কয়েন নেই!');
         return;
       }
 
@@ -794,7 +805,7 @@
       triggerHaptic('heavy');
     }
 
-    // --- 7. TAB NAVIGATION ---
+    // --- 7. TAB SWITCHER ---
     function switchTab(tabId, el) {
       triggerHaptic('light');
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
