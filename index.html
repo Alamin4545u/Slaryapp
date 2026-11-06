@@ -147,11 +147,12 @@ var TAPS_PER_AD = 10;
         capped = true;
         say("আজকের বিজ্ঞাপনের সীমা শেষ।");
       } else {
-        say("");
+        say("রেজাল্ট: " + JSON.stringify(result));
       }
     } catch (err) {
       console.error("BengalAds Error:", err);
-      say("বিজ্ঞাপন দেখানো যায়নি।", "warn");
+      var detail = (err && (err.message || err.code || err.reason)) ? (err.message || err.code || err.reason) : JSON.stringify(err);
+      say("বিজ্ঞাপন এরর: " + detail, "warn");
     }
     busy = false; btn.disabled = false;
   }
