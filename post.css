@@ -1,0 +1,22 @@
+:root{--ink:#0b1226;--deep:#16224d;--ice:#eaf2ff;--mute:#9db0d6;--amber:#ffb84d;--teal:#35d0ba;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hind Siliguri",system-ui,sans-serif;background:radial-gradient(900px 500px at 80% -5%,var(--deep),var(--ink));background-color:var(--ink);color:var(--ice);line-height:1.9;font-size:1.08rem}
+a{color:var(--teal)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+header{border-bottom:1px solid var(--line);background:rgba(11,18,38,.7)}
+header div{width:min(760px,92%);margin:auto;display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:700;font-size:1.2rem;color:var(--ice);text-decoration:none}
+.logo b{color:var(--amber)}
+header a.back{font-size:.95rem;color:var(--mute);text-decoration:none}
+main{width:min(760px,92%);margin:48px auto 70px}
+.tag{color:var(--teal);font-size:.9rem}
+h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.4;margin:8px 0 10px}
+.meta{color:var(--mute);font-size:.92rem;margin-bottom:34px}
+h2{font-size:1.35rem;margin:34px 0 8px;color:var(--amber);line-height:1.5}
+p{margin-bottom:16px}
+ul{margin:0 0 16px 22px}
+li{margin-bottom:8px}
+.note{border-left:3px solid var(--teal);background:rgba(255,255,255,.05);padding:16px 20px;border-radius:0 12px 12px 0;margin:26px 0}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:.92rem}
+footer div{width:min(760px,92%);margin:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--mute);margin-left:16px}
