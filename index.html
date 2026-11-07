@@ -1,139 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#090d1d">
-<title>BengalAds Mini App</title>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="https://ads.bengalads.com/sdk/telegram-interstitial.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexora World | ফ্রিল্যান্সিং ও অনলাইন ইনকামের বাংলা গাইড</title>
+<meta name="description" content="ফ্রিল্যান্সিং, অনলাইন ইনকাম, পেমেন্ট ও AI টুলস নিয়ে ধাপে ধাপে বাংলা গাইড।">
+<meta name="monetag" content="7e70ae46364e49cd9702f05f88831cf8">
+<link rel="canonical" href="https://nexoraworldonline.online/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--bg:#090d1d;--panel:#111831;--line:#273253;--text:#f4f6ff;--muted:#a3aecb;--cyan:#6be7ef;--violet:#8b75ff}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#263568 0,transparent 42%),radial-gradient(ellipse at 100% 30%,#39245f 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
-main{max-width:520px;margin:auto;padding:20px 17px 32px}.top{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.2px}.logo{height:42px;width:42px;border-radius:14px;background:linear-gradient(135deg,var(--cyan),var(--violet));display:grid;place-items:center;color:#10162b;font-size:21px;box-shadow:0 8px 30px #766bff45}.pill{border:1px solid #354264;border-radius:30px;padding:8px 11px;color:#c4cce3;font-size:12px;background:#10172c}
-.hero{position:relative;overflow:hidden;border:1px solid #38456b;border-radius:28px;padding:25px 22px;background:linear-gradient(140deg,#1b2850dd,#17132ddd 70%);box-shadow:0 18px 55px #0004}.hero:after{content:"";position:absolute;width:180px;height:180px;right:-75px;top:-65px;border-radius:50%;background:#8b75ff35;filter:blur(2px)}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero h1{font-size:31px;line-height:1.1;margin:12px 0 10px;letter-spacing:-.8px}.hero p{color:#bac5e2;line-height:1.55;margin:0;max-width:350px;font-size:14px}.adOrb{height:104px;width:104px;margin:24px auto 19px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#b8ffff,#6be7ef 30%,#7567ef 72%);box-shadow:0 0 0 12px #8b75ff12,0 0 40px #6be7ef55;color:#11182c;font-size:36px}.primary{width:100%;border:0;border-radius:17px;padding:16px 18px;background:linear-gradient(100deg,#73eaf0,#9d8aff);color:#10162b;font-size:15px;font-weight:850;box-shadow:0 10px 25px #6c8cf033;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:9px}.primary:disabled{opacity:.55;cursor:wait}.smallNote{text-align:center;color:#9eabc9;font-size:11px;margin:12px 0 0;line-height:1.5}.section{margin-top:21px}.sectionHead{display:flex;align-items:center;justify-content:space-between;margin:0 2px 11px}.sectionHead h2{font-size:15px;margin:0}.sectionHead span{font-size:11px;color:var(--muted)}.info{border:1px solid var(--line);border-radius:19px;background:#111831d9;padding:15px;display:flex;gap:12px;align-items:flex-start}.infoIcon{width:37px;height:37px;border-radius:12px;background:#222c4d;display:grid;place-items:center;font-size:17px;flex-shrink:0}.info strong{display:block;font-size:13px;margin:1px 0 5px}.info p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.stat{padding:14px;border:1px solid var(--line);background:#111831b8;border-radius:17px}.stat .num{font-weight:800;font-size:17px}.stat .label{font-size:11px;color:var(--muted);margin-top:5px}.status{display:inline-flex;gap:7px;align-items:center;color:#b9f6d8;font-size:11px}.dot{width:7px;height:7px;background:#61e4a4;border-radius:50%;box-shadow:0 0 10px #61e4a4}.footer{color:#7885a7;font-size:10px;text-align:center;line-height:1.55;margin:24px 6px 0}.toast{display:none;border:1px solid #665b8d;background:#211b3a;color:#e6e1ff;padding:11px 13px;border-radius:13px;margin-top:12px;font-size:12px;line-height:1.45}.toast.show{display:block}
+:root{--ink:#0b1226;--deep:#16224d;--ice:#eaf2ff;--mute:#9db0d6;--amber:#ffb84d;--teal:#35d0ba;--glass:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--ink);color:var(--ice);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.wrap{width:min(1100px,92%);margin:auto}
+header{position:fixed;inset:0 0 auto;z-index:20;backdrop-filter:blur(14px);background:rgba(11,18,38,.6);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:700;font-size:1.3rem;letter-spacing:.3px}
+.logo b{color:var(--amber)}
+nav{display:flex;gap:22px;font-size:.95rem;color:var(--mute)}
+nav a:hover{color:var(--ice)}
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;padding-top:64px;background:radial-gradient(900px 600px at 75% 40%,var(--deep),var(--ink))}
+#globe{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:2;pointer-events:none}
+.hero h1{font-size:clamp(2.3rem,6.5vw,4.6rem);line-height:1.2;max-width:12em;font-weight:700}
+.hero h1 span{display:block;color:var(--amber)}
+.hero p{max-width:30em;margin:22px 0 32px;color:var(--mute);font-size:1.12rem}
+.btns{display:flex;gap:14px;flex-wrap:wrap;pointer-events:auto}
+.btn{padding:13px 26px;border-radius:12px;font-weight:700;transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.p{background:var(--amber);color:#2a1a00}
+.btn.s{border:1px solid var(--line);background:var(--glass)}
+section{padding:90px 0}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:10px}
+.sub{color:var(--mute);margin-bottom:32px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.tools input{flex:1;min-width:220px;padding:13px 18px;border-radius:12px;border:1px solid var(--line);background:var(--glass);color:var(--ice);font:inherit}
+.tools button{padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--ice);font:inherit;cursor:pointer}
+.tools button.on{background:var(--teal);color:#032a24;border-color:var(--teal)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px;perspective:1000px}
+.card{display:block;padding:28px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line);transition:transform .15s ease-out,border-color .2s;transform-style:preserve-3d;will-change:transform}
+.card:hover{border-color:var(--teal)}
+.tag{display:inline-block;font-size:.8rem;color:var(--teal);margin-bottom:12px}
+.card h3{font-size:1.2rem;line-height:1.5;margin-bottom:10px;transform:translateZ(30px)}
+.card p{color:var(--mute);font-size:.95rem}
+.card small{display:block;margin-top:16px;color:var(--amber)}
+.empty{display:none;color:var(--mute);padding:20px 0}
+.cta{background:linear-gradient(135deg,var(--deep),#0f3b4a);border-radius:28px;padding:56px 32px;text-align:center;border:1px solid var(--line)}
+.cta p{color:var(--mute);margin:10px auto 26px;max-width:32em}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--mute);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer div{display:flex;gap:20px}
+@media(max-width:640px){nav{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<header><div class="wrap">
+<a class="logo" href="/">Nexora <b>World</b></a>
+<nav><a href="#posts">পোস্ট</a><a href="#about">আমাদের সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></nav>
+</div></header>
+
 <main>
-  <header class="top">
-    <div class="brand"><div class="logo">B</div><span>Bengal<span style="color:var(--cyan)">Ads</span></span></div>
-    <div class="pill"><span class="status"><i class="dot"></i> Mini App</span></div>
-  </header>
-  <section class="hero">
-    <div class="eyebrow">Sponsored experience</div>
-    <h1>Discover.<br>Watch. Enjoy.</h1>
-    <p>Tap below to open an available BengalAds interstitial. Ads are served based on eligibility and current inventory.</p>
-    <div class="adOrb" aria-hidden="true">▶</div>
-    <button id="showAd" class="primary"><span>▶</span> Show BengalAds</button>
-    <p class="smallNote">An ad may not be available every time. Please try again later if no ad is served.</p>
-    <div id="notice" class="toast" role="status" aria-live="polite"></div>
-  </section>
-  <section class="section">
-    <div class="sectionHead"><h2>How it works</h2><span>Quick guide</span></div>
-    <div class="info"><div class="infoIcon">✦</div><div><strong>One tap to request an ad</strong><p>Use the button to request a full-screen interstitial. Follow the advertiser and Telegram platform rules; do not repeatedly tap or force ad requests.</p></div></div>
-    <div class="stats">
-      <div class="stat"><div class="num">Interstitial</div><div class="label">Ad format enabled</div></div>
-      <div class="stat"><div class="num" id="adCount">0</div><div class="label">Requests this session</div></div>
-    </div>
-  </section>
-  <section class="section">
-    <div class="info"><div class="infoIcon">ⓘ</div><div><strong>Ad availability</strong><p>Showing an ad depends on your Mini App approval, active format, Telegram session, eligible traffic, advertiser inventory, and BengalAds limits. This app cannot guarantee 100% fill.</p></div></div>
-  </section>
-  <div class="footer">Powered by BengalAds · This mini app does not ask for passwords or payment details.<br>Open inside Telegram for the supported advertising session.</div>
+<div class="hero">
+<canvas id="globe" aria-hidden="true"></canvas>
+<div class="wrap">
+<h1>ঘরে বসে আয়ের পথ, <span>ধাপে ধাপে বাংলায়</span></h1>
+<p>ফ্রিল্যান্সিং শুরু, পেমেন্ট নেওয়া, স্ক্যাম চেনা আর AI টুলসের কাজ। সবকিছু সহজ ভাষায়, বাস্তব উদাহরণসহ।</p>
+<div class="btns"><a class="btn p" href="#posts">গাইড পড়ুন</a><a class="btn s" href="#about">Nexora World কী?</a></div>
+</div>
+</div>
+
+<section id="posts"><div class="wrap">
+<h2>সবচেয়ে নতুন গাইড</h2>
+<p class="sub">টপিক বেছে নিন বা সার্চ করুন।</p>
+<div class="tools">
+<input id="q" type="search" placeholder="যেমন: ফাইভার, বিকাশ, AI" aria-label="পোস্ট সার্চ">
+<button class="on" data-c="all">সব</button><button data-c="ফ্রিল্যান্সিং">ফ্রিল্যান্সিং</button><button data-c="পেমেন্ট">পেমেন্ট</button><button data-c="AI টুলস">AI টুলস</button><button data-c="সতর্কতা">সতর্কতা</button>
+</div>
+<div class="grid" id="list">
+<a class="card" href="posts/freelancing-kivabe-shuru-korben.html" data-c="ফ্রিল্যান্সিং"><span class="tag">ফ্রিল্যান্সিং</span><h3>ফ্রিল্যান্সিং কীভাবে শুরু করবেন: নতুনদের সম্পূর্ণ গাইড</h3><p>স্কিল বাছাই থেকে প্রথম ক্লায়েন্ট পাওয়া পর্যন্ত ধাপগুলো।</p><small>১০ মিনিটের পাঠ</small></a>
+<a class="card" href="posts/fiverr-profile-banano.html" data-c="ফ্রিল্যান্সিং"><span class="tag">ফ্রিল্যান্সিং</span><h3>ফাইভার প্রোফাইল ও গিগ বানানোর সঠিক নিয়ম</h3><p>যে ভুলগুলোর কারণে নতুনরা অর্ডার পায় না।</p><small>৮ মিনিটের পাঠ</small></a>
+<a class="card" href="posts/bkash-nagad-payment.html" data-c="পেমেন্ট"><span class="tag">পেমেন্ট</span><h3>বিদেশি পেমেন্ট বিকাশ ও নগদে নেওয়ার উপায়</h3><p>পেওনিয়ার, ব্যাংক ও মোবাইল ব্যাংকিং: কোনটা কখন সুবিধা।</p><small>৯ মিনিটের পাঠ</small></a>
+<a class="card" href="posts/online-income-scam-chinben.html" data-c="সতর্কতা"><span class="tag">সতর্কতা</span><h3>অনলাইন ইনকামের স্ক্যাম চেনার ৭টি লক্ষণ</h3><p>টাকা খোয়ানোর আগে এই লক্ষণগুলো মিলিয়ে নিন।</p><small>৬ মিনিটের পাঠ</small></a>
+<a class="card" href="posts/ai-tools-diye-kaj.html" data-c="AI টুলস"><span class="tag">AI টুলস</span><h3>AI টুলস দিয়ে ফ্রিল্যান্সিং কাজ দ্রুত করার উপায়</h3><p>লেখা, ডিজাইন ও রিসার্চে সময় বাঁচানোর বাস্তব কৌশল।</p><small>৭ মিনিটের পাঠ</small></a>
+<a class="card" href="posts/free-tools-list.html" data-c="AI টুলস"><span class="tag">AI টুলস</span><h3>নতুনদের জন্য সেরা ১০টি ফ্রি অনলাইন টুলস</h3><p>বিনা খরচে কাজ শুরু করার প্রয়োজনীয় টুলের তালিকা।</p><small>৫ মিনিটের পাঠ</small></a>
+</div>
+<p class="empty" id="empty">কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে সার্চ করুন।</p>
+</div></section>
+
+<section id="about"><div class="wrap"><div class="cta">
+<h2>Nexora World কেন?</h2>
+<p>অনলাইন আয় নিয়ে বাংলায় ভুল ও বিভ্রান্তিকর তথ্য অনেক। আমরা যাচাই করা, সহজ ও ধাপে ধাপে গাইড লিখি যাতে নতুনরা ভুল পথে সময় ও টাকা নষ্ট না করেন।</p>
+<a class="btn p" href="#posts">পড়া শুরু করুন</a>
+</div></div></section>
 </main>
+
+<footer><div class="wrap">
+<span>© <span id="y"></span> Nexora World</span>
+<div><a href="about.html">আমাদের সম্পর্কে</a><a href="contact.html">যোগাযোগ</a><a href="privacy-policy.html">প্রাইভেসি পলিসি</a></div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-(() => {
-  "use strict";
-  const APP_ID = "tma_fec98fc694de96f690ac8933ab0e74cc89cb8d82";
-  const FORMAT_ID = "int_f8d6d62c20ea66c9aeb935cb90081a5e10bc1cec";
-  const button = document.getElementById("showAd");
-  const notice = document.getElementById("notice");
-  const counter = document.getElementById("adCount");
-  let requests = 0;
-  let busy = false;
-  let initialized = false;
+document.getElementById('y').textContent=new Date().getFullYear();
 
-  function showNotice(message) {
-    notice.textContent = message;
-    notice.classList.add("show");
+/* Search + filter */
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.card')),q=document.getElementById('q'),
+      btns=[].slice.call(document.querySelectorAll('.tools button')),empty=document.getElementById('empty'),cat='all';
+  function run(){
+    var t=q.value.trim().toLowerCase(),n=0;
+    cards.forEach(function(c){
+      var ok=(cat==='all'||c.dataset.c===cat)&&c.textContent.toLowerCase().indexOf(t)>-1;
+      c.style.display=ok?'':'none';if(ok)n++;
+    });
+    empty.style.display=n?'none':'block';
   }
-  function hideNotice() {
-    notice.textContent = "";
-    notice.classList.remove("show");
-  }
-  function inTelegram() {
-    return !!(window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initData);
-  }
-  function initialize() {
-    if (initialized) return true;
-    if (!window.BengalAds || typeof window.BengalAds.init !== "function") {
-      showNotice("BengalAds SDK did not load. Check your internet connection and try opening the Mini App again.");
-      return false;
-    }
-    try {
-      const tg = window.Telegram && window.Telegram.WebApp;
-      if (tg) tg.ready();
-      const config = { appId: APP_ID, formatId: FORMAT_ID };
-      if (tg && tg.initData) config.telegramInitData = tg.initData;
-      window.BengalAds.init(config);
-      initialized = true;
-      return true;
-    } catch (error) {
-      console.error("BengalAds initialization failed:", error);
-      showNotice("BengalAds could not initialize. Confirm the App ID and active Format ID in your publisher dashboard.");
-      return false;
-    }
-  }
-
-  if (window.Telegram && window.Telegram.WebApp) {
-    try {
-      window.Telegram.WebApp.ready();
-      window.Telegram.WebApp.expand();
-      if (window.Telegram.WebApp.setHeaderColor) window.Telegram.WebApp.setHeaderColor("#090d1d");
-      if (window.Telegram.WebApp.setBackgroundColor) window.Telegram.WebApp.setBackgroundColor("#090d1d");
-    } catch (_) {}
-  }
-  // Initialize after SDK availability; if script is delayed, the button handler retries.
-  initialize();
-
-  button.addEventListener("click", async () => {
-    if (busy) return;
-    hideNotice();
-    if (!inTelegram()) {
-      showNotice("Please open this page from your Telegram bot's Mini App button. The ad SDK requires a Telegram session.");
-      return;
-    }
-    if (!initialize()) return;
-    if (typeof window.BengalAds.showInterstitial !== "function") {
-      showNotice("The interstitial method is unavailable. Please reload the Mini App.");
-      return;
-    }
-    busy = true;
-    button.disabled = true;
-    button.innerHTML = "<span>◌</span> Requesting ad…";
-    requests += 1;
-    counter.textContent = String(requests);
-    try {
-      const result = await window.BengalAds.showInterstitial();
-      if (result && result.status === "closed") {
-        showNotice("Ad closed. Thanks for viewing.");
-      } else if (result && result.status === "no_fill") {
-        showNotice("No ad is available right now. " + (result.reason || "Please try again later."));
-      } else if (result && result.status === "bot_daily_cap") {
-        showNotice("The Mini App has reached its daily ad limit. Please try again tomorrow.");
-      } else {
-        showNotice("Ad request finished. Status: " + (result && result.status ? result.status : "unknown") + ". No reward is issued by this demo.");
-      }
-    } catch (error) {
-      console.error("BengalAds showInterstitial failed:", error);
-      showNotice("The ad could not be shown this time. Check the SDK setup and try again later.");
-    } finally {
-      busy = false;
-      button.disabled = false;
-      button.innerHTML = "<span>▶</span> Show BengalAds";
-    }
+  q.addEventListener('input',run);
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');cat=b.dataset.c;run();
+  })});
+  /* 3D tilt on hover (follows the pointer) */
+  cards.forEach(function(c){
+    c.addEventListener('mousemove',function(e){
+      var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform='rotateY('+(x*12)+'deg) rotateX('+(-y*12)+'deg) translateZ(8px)';
+    });
+    c.addEventListener('mouseleave',function(){c.style.transform=''});
   });
+})();
+
+/* 3D globe hero */
+(function(){
+  var cv=document.getElementById('globe');
+  if(!window.THREE){return}
+  var ren;
+  try{ren=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){return}
+  var still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);
+  cam.position.z=7;
+  var g=new THREE.Group();scene.add(g);
+
+  var core=new THREE.Mesh(new THREE.SphereGeometry(1.7,48,48),new THREE.MeshBasicMaterial({color:0x16224d,transparent:true,opacity:.85}));
+  g.add(core);
+  var mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1.75,3),new THREE.MeshBasicMaterial({color:0x35d0ba,wireframe:true,transparent:true,opacity:.35}));
+  g.add(mesh);
+
+  var pts=[],pos=[];
+  for(var i=0;i<260;i++){
+    var u=Math.random()*2-1,t=Math.random()*Math.PI*2,s=Math.sqrt(1-u*u),R=1.85;
+    pos.push(R*s*Math.cos(t),R*u,R*s*Math.sin(t));
+  }
+  var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  g.add(new THREE.Points(pg,new THREE.PointsMaterial({color:0xffb84d,size:.045})));
+
+  var rings=[];
+  [[2.5,.012,0xffb84d,1.2,.2],[3.0,.008,0x35d0ba,.5,-.9],[3.5,.006,0xeaf2ff,1.7,.6]].forEach(function(r){
+    var m=new THREE.Mesh(new THREE.TorusGeometry(r[0],r[1],8,160),new THREE.MeshBasicMaterial({color:r[2],transparent:true,opacity:.55}));
+    m.rotation.x=r[3];m.rotation.y=r[4];g.add(m);rings.push(m);
+    var sat=new THREE.Mesh(new THREE.SphereGeometry(.07,16,16),new THREE.MeshBasicMaterial({color:r[2]}));
+    m.add(sat);m.userData={sat:sat,R:r[0],a:Math.random()*6.28};
+  });
+
+  var mx=0,my=0,wide=true;
+  addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+  function size(){
+    var w=cv.clientWidth,h=cv.clientHeight;
+    ren.setPixelRatio(Math.min(devicePixelRatio,2));ren.setSize(w,h,false);
+    cam.aspect=w/h;wide=w>760;cam.updateProjectionMatrix();
+    g.position.set(wide?2.6:0,wide?0:1.9,0);
+    g.scale.setScalar(wide?1:.8);
+  }
+  addEventListener('resize',size);size();
+
+  var vis=true;
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+  function tick(){
+    requestAnimationFrame(tick);
+    if(!vis)return;
+    if(!still){g.rotation.y+=.0035;mesh.rotation.y-=.001}
+    g.rotation.x+=((my*.6)-g.rotation.x)*.04;
+    g.rotation.z+=((-mx*.3)-g.rotation.z)*.04;
+    rings.forEach(function(m){
+      if(!still)m.userData.a+=.012;
+      var a=m.userData.a;m.userData.sat.position.set(Math.cos(a)*m.userData.R,Math.sin(a)*m.userData.R,0);
+    });
+    ren.render(scene,cam);
+  }
+  tick();
 })();
 </script>
 </body>
