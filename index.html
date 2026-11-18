@@ -1,208 +1,168 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nexora World | ফ্রিল্যান্সিং ও অনলাইন ইনকামের বাংলা গাইড</title>
-<meta name="description" content="ফ্রিল্যান্সিং, অনলাইন ইনকাম, পেমেন্ট ও AI টুলস নিয়ে ধাপে ধাপে বাংলা গাইড।">
-<meta name="monetag" content="7e70ae46364e49cd9702f05f88831cf8">
-<link rel="canonical" href="https://nexoraworldonline.online/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071426">
+<meta name="description" content="A professional profile showcase and portfolio page.">
+<title>Professional Profile | Profile Showcase</title>
 <style>
-:root{--ink:#0b1226;--deep:#16224d;--ice:#eaf2ff;--mute:#9db0d6;--amber:#ffb84d;--teal:#35d0ba;--glass:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
-*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#071426;--bg2:#0b1d35;--panel:rgba(16,37,65,.72);--line:rgba(170,204,239,.16);
+  --text:#edf5ff;--muted:#a9bdd5;--blue:#0a66c2;--cyan:#5dd7ff;--gold:#f5c979;
+  --shadow:0 24px 70px rgba(0,0,0,.35);--radius:26px;
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--ink);color:var(--ice);line-height:1.7;overflow-x:hidden}
+body{margin:0;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+background:radial-gradient(ellipse at 15% 5%,rgba(25,117,194,.25),transparent 36%),radial-gradient(ellipse at 90% 30%,rgba(42,184,209,.14),transparent 32%),linear-gradient(145deg,var(--bg),#091a30 55%,#06101f);min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
-.wrap{width:min(1100px,92%);margin:auto}
-header{position:fixed;inset:0 0 auto;z-index:20;backdrop-filter:blur(14px);background:rgba(11,18,38,.6);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-weight:700;font-size:1.3rem;letter-spacing:.3px}
-.logo b{color:var(--amber)}
-nav{display:flex;gap:22px;font-size:.95rem;color:var(--mute)}
-nav a:hover{color:var(--ice)}
-.hero{position:relative;min-height:100vh;display:grid;align-items:center;padding-top:64px;background:radial-gradient(900px 600px at 75% 40%,var(--deep),var(--ink))}
-#globe{position:absolute;inset:0;width:100%;height:100%}
-.hero .wrap{position:relative;z-index:2;pointer-events:none}
-.hero h1{font-size:clamp(2.3rem,6.5vw,4.6rem);line-height:1.2;max-width:12em;font-weight:700}
-.hero h1 span{display:block;color:var(--amber)}
-.hero p{max-width:30em;margin:22px 0 32px;color:var(--mute);font-size:1.12rem}
-.btns{display:flex;gap:14px;flex-wrap:wrap;pointer-events:auto}
-.btn{padding:13px 26px;border-radius:12px;font-weight:700;transition:transform .2s}
+button{font:inherit}
+.container{width:min(1120px,calc(100% - 38px));margin:auto;position:relative;z-index:1}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.2px}
+.brand-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#0a66c2,#48c5e8);box-shadow:0 8px 24px #0a66c255;font-size:19px}
+.nav-label{color:var(--muted);font-size:13px;letter-spacing:1.7px;text-transform:uppercase}
+.hero{padding:46px 0 62px;display:grid;grid-template-columns:1.12fr .88fr;gap:46px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #5dd7ff44;background:#5dd7ff0d;color:#a9eaff;border-radius:100px;padding:9px 14px;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
+.pulse{width:7px;height:7px;border-radius:50%;background:#69e5b0;box-shadow:0 0 0 5px #69e5b01d}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.03;letter-spacing:-2.8px;margin:22px 0 17px}
+.gradient{background:linear-gradient(100deg,#fff 5%,#9bdcff 58%,#73e3df);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:17px;line-height:1.8;color:var(--muted);max-width:620px}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+.btn{border:1px solid transparent;border-radius:14px;padding:14px 20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:750;transition:transform .25s,box-shadow .25s,background .25s;cursor:pointer}
 .btn:hover{transform:translateY(-3px)}
-.btn.p{background:var(--amber);color:#2a1a00}
-.btn.s{border:1px solid var(--line);background:var(--glass)}
-section{padding:90px 0}
-h2{font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:10px}
-.sub{color:var(--mute);margin-bottom:32px}
-.tools{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
-.tools input{flex:1;min-width:220px;padding:13px 18px;border-radius:12px;border:1px solid var(--line);background:var(--glass);color:var(--ice);font:inherit}
-.tools button{padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--ice);font:inherit;cursor:pointer}
-.tools button.on{background:var(--teal);color:#032a24;border-color:var(--teal)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px;perspective:1000px}
-.card{display:block;padding:28px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--line);transition:transform .15s ease-out,border-color .2s;transform-style:preserve-3d;will-change:transform}
-.card:hover{border-color:var(--teal)}
-.tag{display:inline-block;font-size:.8rem;color:var(--teal);margin-bottom:12px}
-.card h3{font-size:1.2rem;line-height:1.5;margin-bottom:10px;transform:translateZ(30px)}
-.card p{color:var(--mute);font-size:.95rem}
-.card small{display:block;margin-top:16px;color:var(--amber)}
-.empty{display:none;color:var(--mute);padding:20px 0}
-.cta{background:linear-gradient(135deg,var(--deep),#0f3b4a);border-radius:28px;padding:56px 32px;text-align:center;border:1px solid var(--line)}
-.cta p{color:var(--mute);margin:10px auto 26px;max-width:32em}
-footer{border-top:1px solid var(--line);padding:36px 0;color:var(--mute);font-size:.92rem}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-footer div{display:flex;gap:20px}
-@media(max-width:640px){nav{display:none}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.btn-primary{background:linear-gradient(120deg,#0877d8,#19a9d4);box-shadow:0 12px 28px #0877d844;color:white}
+.btn-primary:hover{box-shadow:0 17px 36px #0877d866}
+.btn-ghost{border-color:#b7d7f344;background:#ffffff08;color:#e8f5ff}
+.btn-ghost:hover{background:#ffffff12}
+.hero-note{font-size:12px;color:#829bb7;margin-top:16px}
+.profile-wrap{perspective:1200px}
+.profile-card{position:relative;border:1px solid #b7d7f32b;background:linear-gradient(145deg,rgba(23,52,87,.88),rgba(9,27,49,.9));border-radius:30px;padding:25px;box-shadow:var(--shadow);transform:rotateY(-7deg) rotateX(3deg);transition:transform .5s}
+.profile-card:hover{transform:rotateY(0) rotateX(0) translateY(-5px)}
+.profile-cover{height:112px;border-radius:19px;background:linear-gradient(115deg,#0a66c2,#1d9bc3 55%,#92d8db);position:relative;overflow:hidden}
+.profile-cover:before,.profile-cover:after{content:"";position:absolute;border:1px solid #ffffff40;border-radius:50%;width:230px;height:230px;right:-35px;top:-125px}
+.profile-cover:after{width:170px;height:170px;right:60px;top:-90px}
+.avatar{width:102px;height:102px;border:5px solid #112d4b;border-radius:50%;margin-top:-51px;position:relative;background:linear-gradient(135deg,#dbe9f5,#7899b7);display:grid;place-items:center;color:#294967;font-size:34px;font-weight:800;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.profile-name{font-size:25px;font-weight:800;margin:15px 0 5px}
+.profile-role{font-size:14px;color:#c0d3e8;line-height:1.6}
+.profile-loc{font-size:12px;color:#91a9c3;margin-top:10px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+.pill{font-size:11px;border:1px solid #83cfff38;background:#5bbcf314;padding:7px 10px;border-radius:100px;color:#c8eaff}
+.card-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:20px;padding-top:16px;color:#9db4cc;font-size:12px}
+.section{padding:42px 0}
+.section-head{margin-bottom:23px}
+.kicker{color:#65d5f1;text-transform:uppercase;font-size:11px;letter-spacing:2px;font-weight:800}
+h2{font-size:clamp(27px,4vw,38px);letter-spacing:-1px;margin:9px 0}
+.section-desc{color:var(--muted);line-height:1.7;max-width:680px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat,.info-card,.about-card{border:1px solid var(--line);background:var(--panel);backdrop-filter:blur(16px);border-radius:22px;box-shadow:0 15px 40px #00000018}
+.stat{padding:22px}
+.stat strong{display:block;font-size:31px;letter-spacing:-1px}
+.stat span{display:block;color:var(--muted);font-size:13px;margin-top:6px}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.info-card{padding:21px;display:flex;gap:15px;align-items:flex-start}
+.info-icon{width:42px;height:42px;flex:0 0 42px;border-radius:13px;display:grid;place-items:center;background:#0a66c225;color:#80dfff;font-size:19px}
+.info-card h3{font-size:15px;margin:1px 0 7px}
+.info-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}
+.about-card{padding:26px;line-height:1.85;color:#c0d1e4}
+.cta{margin:40px 0 55px;padding:34px;border:1px solid #6dcdf344;border-radius:28px;background:radial-gradient(circle at 90% 10%,#1477a933,transparent 35%),linear-gradient(120deg,#102c4c,#0a1c33);text-align:center;box-shadow:var(--shadow)}
+.cta h2{margin-top:0}
+.cta p{color:var(--muted);max-width:620px;margin:0 auto 22px;line-height:1.7}
+footer{border-top:1px solid var(--line);padding:23px 0 34px;color:#8199b4;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tooltip{position:relative}
+.tooltip:before,.tooltip:after{position:absolute;left:50%;bottom:calc(100% + 10px);opacity:0;pointer-events:none;transition:.2s;transform:translate(-50%,6px);z-index:10}
+.tooltip:before{content:attr(data-tip);white-space:nowrap;background:#061323;color:#eaf7ff;border:1px solid #6dbfe755;border-radius:8px;padding:8px 10px;font-size:11px;box-shadow:0 8px 24px #0008}
+.tooltip:after{content:"";border:6px solid transparent;border-top-color:#061323;bottom:calc(100% - 2px)}
+.tooltip:hover:before,.tooltip:hover:after,.tooltip:focus-visible:before,.tooltip:focus-visible:after{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;gap:30px;padding-top:25px}.profile-card{transform:none;max-width:500px;margin:auto;width:100%}.hero-copy{text-align:center}.lead{margin-inline:auto}.actions{justify-content:center}}
+@media(max-width:580px){.container{width:min(100% - 28px,1120px)}.nav{padding:17px 0}.nav-label{font-size:10px}.hero{padding:30px 0 42px}h1{letter-spacing:-1.8px}.lead{font-size:15px}.stats{grid-template-columns:1fr;gap:11px}.stat{padding:17px;display:flex;align-items:center;justify-content:space-between}.stat strong{font-size:25px}.stat span{margin:0;text-align:right}.info-grid{grid-template-columns:1fr}.cta{padding:25px 17px;margin:25px 0 40px}.profile-card{padding:18px}.profile-cover{height:95px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
-<script>(function(s){s.dataset.zone='12209514',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Nexora World">
-<meta property="og:title" content="Nexora World | ফ্রিল্যান্সিং ও অনলাইন ইনকামের বাংলা গাইড">
-<meta property="og:description" content="ফ্রিল্যান্সিং, অনলাইন ইনকাম, পেমেন্ট ও AI টুলস নিয়ে ধাপে ধাপে বাংলা গাইড।">
-<meta property="og:url" content="https://nexoraworldonline.online/">
-<meta property="og:locale" content="bn_BD">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Nexora World", "url": "https://nexoraworldonline.online/", "inLanguage": "bn"}</script>
 </head>
 <body>
-<header><div class="wrap">
-<a class="logo" href="/">Nexora <b>World</b></a>
-<nav><a href="#posts">পোস্ট</a><a href="#about">আমাদের সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></nav>
-</div></header>
+<header class="container nav">
+  <a class="brand" href="#top" aria-label="Profile Showcase home"><span class="brand-mark">P</span><span>PROFILE<span style="color:#65d5f1">SHOWCASE</span></span></a>
+  <span class="nav-label">Professional profile overview</span>
+</header>
 
-<main>
-<div class="hero">
-<canvas id="globe" aria-hidden="true"></canvas>
-<div class="wrap">
-<h1>ঘরে বসে আয়ের পথ, <span>ধাপে ধাপে বাংলায়</span></h1>
-<p>ফ্রিল্যান্সিং শুরু, পেমেন্ট নেওয়া, স্ক্যাম চেনা আর AI টুলসের কাজ। সবকিছু সহজ ভাষায়, বাস্তব উদাহরণসহ।</p>
-<div class="btns"><a class="btn p" href="#posts">গাইড পড়ুন</a><a class="btn s" href="#about">Nexora World কী?</a></div>
-</div>
-</div>
+<main id="top" class="container">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow"><i class="pulse"></i> Professional profile</span>
+      <h1>Connect with a <span class="gradient">professional</span> profile.</h1>
+      <p class="lead">A concise overview of professional background, education and public profile information. Explore the details below or continue to the official LinkedIn profile.</p>
+      <div class="actions">
+        <a class="btn btn-primary tooltip" data-tip="Open the official LinkedIn profile" href="https://uplcm.com/4/12291750" target="_blank" rel="noopener noreferrer">Open LinkedIn Profile <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-ghost tooltip" data-tip="Jump to the profile information" href="#details">View Profile Details <span aria-hidden="true">↓</span></a>
+      </div>
+      <p class="hero-note">This page is an independent profile showcase and is not affiliated with LinkedIn.</p>
+    </div>
 
-<section id="posts"><div class="wrap">
-<h2>সবচেয়ে নতুন গাইড</h2>
-<p class="sub">টপিক বেছে নিন বা সার্চ করুন।</p>
-<div class="tools">
-<input id="q" type="search" placeholder="যেমন: ফাইভার, বিকাশ, AI" aria-label="পোস্ট সার্চ">
-<button class="on" data-c="all">সব</button><button data-c="ফ্রিল্যান্সিং">ফ্রিল্যান্সিং</button><button data-c="পেমেন্ট">পেমেন্ট</button><button data-c="AI টুলস">AI টুলস</button><button data-c="সতর্কতা">সতর্কতা</button>
-</div>
-<div class="grid" id="list">
-<a class="card" href="posts/freelancing-kivabe-shuru-korben.html" data-c="ফ্রিল্যান্সিং"><span class="tag">ফ্রিল্যান্সিং</span><h3>ফ্রিল্যান্সিং কীভাবে শুরু করবেন: নতুনদের সম্পূর্ণ গাইড</h3><p>স্কিল বাছাই থেকে প্রথম ক্লায়েন্ট পাওয়া পর্যন্ত ধাপগুলো।</p><small>১০ মিনিটের পাঠ</small></a>
-<a class="card" href="posts/fiverr-profile-banano.html" data-c="ফ্রিল্যান্সিং"><span class="tag">ফ্রিল্যান্সিং</span><h3>ফাইভার প্রোফাইল ও গিগ বানানোর সঠিক নিয়ম</h3><p>যে ভুলগুলোর কারণে নতুনরা অর্ডার পায় না।</p><small>৮ মিনিটের পাঠ</small></a>
-<a class="card" href="posts/bkash-nagad-payment.html" data-c="পেমেন্ট"><span class="tag">পেমেন্ট</span><h3>বিদেশি পেমেন্ট বিকাশ ও নগদে নেওয়ার উপায়</h3><p>পেওনিয়ার, ব্যাংক ও মোবাইল ব্যাংকিং: কোনটা কখন সুবিধা।</p><small>৯ মিনিটের পাঠ</small></a>
-<a class="card" href="posts/online-income-scam-chinben.html" data-c="সতর্কতা"><span class="tag">সতর্কতা</span><h3>অনলাইন ইনকামের স্ক্যাম চেনার ৭টি লক্ষণ</h3><p>টাকা খোয়ানোর আগে এই লক্ষণগুলো মিলিয়ে নিন।</p><small>৬ মিনিটের পাঠ</small></a>
-<a class="card" href="posts/ai-tools-diye-kaj.html" data-c="AI টুলস"><span class="tag">AI টুলস</span><h3>AI টুলস দিয়ে ফ্রিল্যান্সিং কাজ দ্রুত করার উপায়</h3><p>লেখা, ডিজাইন ও রিসার্চে সময় বাঁচানোর বাস্তব কৌশল।</p><small>৭ মিনিটের পাঠ</small></a>
-<a class="card" href="posts/free-tools-list.html" data-c="AI টুলস"><span class="tag">AI টুলস</span><h3>নতুনদের জন্য সেরা ১০টি ফ্রি অনলাইন টুলস</h3><p>বিনা খরচে কাজ শুরু করার প্রয়োজনীয় টুলের তালিকা।</p><small>৫ মিনিটের পাঠ</small></a>
-</div>
-<p class="empty" id="empty">কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে সার্চ করুন।</p>
-</div></section>
+    <div class="profile-wrap">
+      <article class="profile-card">
+        <div class="profile-cover"></div>
+        <div class="avatar" aria-label="Profile photo placeholder">MZ</div>
+        <div class="profile-name">Mandy Zhou</div>
+        <div class="profile-role">Aspiring Web &amp; App Developer<br>HTML · CSS · JavaScript · Practical Projects</div>
+        <div class="profile-loc">⌖ Gaibandha Govt. College · Greater Seattle Area</div>
+        <div class="pills"><span class="pill">201+ Connections</span><span class="pill">Member since 2021*</span></div>
+        <div class="card-foot"><span>Public profile overview</span><span>LinkedIn ↗</span></div>
+      </article>
+    </div>
+  </section>
 
-<section id="about"><div class="wrap"><div class="cta">
-<h2>Nexora World কেন?</h2>
-<p>অনলাইন আয় নিয়ে বাংলায় ভুল ও বিভ্রান্তিকর তথ্য অনেক। আমরা যাচাই করা, সহজ ও ধাপে ধাপে গাইড লিখি যাতে নতুনরা ভুল পথে সময় ও টাকা নষ্ট না করেন।</p>
-<a class="btn p" href="#posts">পড়া শুরু করুন</a>
-</div></div></section>
+  <section class="section reveal" id="details">
+    <div class="section-head"><span class="kicker">At a glance</span><h2>Profile overview</h2><p class="section-desc">Key details supplied for this profile showcase. Please verify all information against the live profile before publishing.</p></div>
+    <div class="stats">
+      <div class="stat"><strong>2021</strong><span>Reported account creation year*</span></div>
+      <div class="stat"><strong>201+</strong><span>Reported connections</span></div>
+      <div class="stat"><strong>Web &amp; App</strong><span>Professional interest</span></div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-head"><span class="kicker">Background</span><h2>Professional information</h2><p class="section-desc">A simple summary of the education, interests and public information associated with the profile.</p></div>
+    <div class="info-grid">
+      <article class="info-card"><span class="info-icon">⌘</span><div><h3>Professional focus</h3><p>Web and application development, with an interest in HTML, CSS, JavaScript and building practical projects.</p></div></article>
+      <article class="info-card"><span class="info-icon">▤</span><div><h3>Education</h3><p>Gaibandha Govt. College.</p></div></article>
+      <article class="info-card"><span class="info-icon">◎</span><div><h3>Location shown</h3><p>Greater Seattle Area.</p></div></article>
+      <article class="info-card"><span class="info-icon">↗</span><div><h3>Professional network</h3><p>201+ connections, as reported in the supplied profile screenshot.</p></div></article>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section-head"><span class="kicker">About</span><h2>Profile summary</h2></div>
+    <div class="about-card">Aspiring Web &amp; App Developer with an interest in front-end technologies and practical software projects. Currently focused on developing skills in HTML, CSS and JavaScript while exploring application development. This page presents a brief, transparent overview; the official LinkedIn profile remains the source for the latest details.</div>
+  </section>
+
+  <section class="cta reveal">
+    <span class="kicker">Continue to LinkedIn</span>
+    <h2>View the official profile</h2>
+    <p>For the latest profile photo, experience, education and other updates, visit the public LinkedIn profile directly.</p>
+    <a class="btn btn-primary tooltip" data-tip="Replace the placeholder URL in the HTML with your public profile URL" href="https://uplcm.com/4/12291750" target="_blank" rel="noopener noreferrer">Open Profile on LinkedIn ↗</a>
+  </section>
 </main>
 
-<footer><div class="wrap">
-<span>© <span id="y"></span> Nexora World</span>
-<div><a href="about.html">আমাদের সম্পর্কে</a><a href="contact.html">যোগাযোগ</a><a href="privacy-policy.html">প্রাইভেসি পলিসি</a></div>
-</div></footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<footer class="container">
+  <span>© <span id="year"></span> Profile Showcase</span>
+  <span>Independent profile presentation · Not affiliated with LinkedIn</span>
+</footer>
 <script>
-document.getElementById('y').textContent=new Date().getFullYear();
-
-/* Search + filter */
-(function(){
-  var cards=[].slice.call(document.querySelectorAll('.card')),q=document.getElementById('q'),
-      btns=[].slice.call(document.querySelectorAll('.tools button')),empty=document.getElementById('empty'),cat='all';
-  function run(){
-    var t=q.value.trim().toLowerCase(),n=0;
-    cards.forEach(function(c){
-      var ok=(cat==='all'||c.dataset.c===cat)&&c.textContent.toLowerCase().indexOf(t)>-1;
-      c.style.display=ok?'':'none';if(ok)n++;
-    });
-    empty.style.display=n?'none':'block';
-  }
-  q.addEventListener('input',run);
-  btns.forEach(function(b){b.addEventListener('click',function(){
-    btns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');cat=b.dataset.c;run();
-  })});
-  /* 3D tilt on hover (follows the pointer) */
-  cards.forEach(function(c){
-    c.addEventListener('mousemove',function(e){
-      var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-      c.style.transform='rotateY('+(x*12)+'deg) rotateX('+(-y*12)+'deg) translateZ(8px)';
-    });
-    c.addEventListener('mouseleave',function(){c.style.transform=''});
+document.getElementById('year').textContent = new Date().getFullYear();
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
-})();
-
-/* 3D globe hero */
-(function(){
-  var cv=document.getElementById('globe');
-  if(!window.THREE){return}
-  var ren;
-  try{ren=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){return}
-  var still=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);
-  cam.position.z=7;
-  var g=new THREE.Group();scene.add(g);
-
-  var core=new THREE.Mesh(new THREE.SphereGeometry(1.7,48,48),new THREE.MeshBasicMaterial({color:0x16224d,transparent:true,opacity:.85}));
-  g.add(core);
-  var mesh=new THREE.Mesh(new THREE.IcosahedronGeometry(1.75,3),new THREE.MeshBasicMaterial({color:0x35d0ba,wireframe:true,transparent:true,opacity:.35}));
-  g.add(mesh);
-
-  var pts=[],pos=[];
-  for(var i=0;i<260;i++){
-    var u=Math.random()*2-1,t=Math.random()*Math.PI*2,s=Math.sqrt(1-u*u),R=1.85;
-    pos.push(R*s*Math.cos(t),R*u,R*s*Math.sin(t));
-  }
-  var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
-  g.add(new THREE.Points(pg,new THREE.PointsMaterial({color:0xffb84d,size:.045})));
-
-  var rings=[];
-  [[2.5,.012,0xffb84d,1.2,.2],[3.0,.008,0x35d0ba,.5,-.9],[3.5,.006,0xeaf2ff,1.7,.6]].forEach(function(r){
-    var m=new THREE.Mesh(new THREE.TorusGeometry(r[0],r[1],8,160),new THREE.MeshBasicMaterial({color:r[2],transparent:true,opacity:.55}));
-    m.rotation.x=r[3];m.rotation.y=r[4];g.add(m);rings.push(m);
-    var sat=new THREE.Mesh(new THREE.SphereGeometry(.07,16,16),new THREE.MeshBasicMaterial({color:r[2]}));
-    m.add(sat);m.userData={sat:sat,R:r[0],a:Math.random()*6.28};
-  });
-
-  var mx=0,my=0,wide=true;
-  addEventListener('pointermove',function(e){mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
-  function size(){
-    var w=cv.clientWidth,h=cv.clientHeight;
-    ren.setPixelRatio(Math.min(devicePixelRatio,2));ren.setSize(w,h,false);
-    cam.aspect=w/h;wide=w>760;cam.updateProjectionMatrix();
-    g.position.set(wide?2.6:0,wide?0:1.9,0);
-    g.scale.setScalar(wide?1:.8);
-  }
-  addEventListener('resize',size);size();
-
-  var vis=true;
-  new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
-  function tick(){
-    requestAnimationFrame(tick);
-    if(!vis)return;
-    if(!still){g.rotation.y+=.0035;mesh.rotation.y-=.001}
-    g.rotation.x+=((my*.6)-g.rotation.x)*.04;
-    g.rotation.z+=((-mx*.3)-g.rotation.z)*.04;
-    rings.forEach(function(m){
-      if(!still)m.userData.a+=.012;
-      var a=m.userData.a;m.userData.sat.position.set(Math.cos(a)*m.userData.R,Math.sin(a)*m.userData.R,0);
-    });
-    ren.render(scene,cam);
-  }
-  tick();
-})();
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
