@@ -1,267 +1,343 @@
-
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Monetag Ads Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0c10">
+<meta name="description" content="Watch and download the latest movies in HD and 4K.">
+<title>CineFlix - Watch & Download Movies in HD</title>
 
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="https://libtl.com/sdk.js"
- data-zone="12308086"
- data-sdk="show_12308086"></script>
+<!-- ===================== MONETAG AD SCRIPTS ===================== -->
+
+<!-- 1. MULTITAG SCRIPT (not used: each format below is installed on its own, MultiTag would duplicate them) -->
+<!-- PASTE MONETAG CODE HERE -->
+
+<!-- 2. ONCLICK (POPUNDER) - zone 12333933 -->
+<script>(function(s){s.dataset.zone='12333933',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<!-- 3. PUSH NOTIFICATIONS - zone 12333935 -->
+<!-- REMINDER: Monetag Push requires the file "sw.js" (downloaded from your Monetag dashboard)
+     to be uploaded to the ROOT of your domain (e.g. https://yourdomain.com/sw.js),
+     next to this index.html. Without it, push subscriptions will not work. -->
+<script src="https://5gvci.com/act/files/tag.min.js?z=12333935" data-cfasync="false" async></script>
+
+<!-- 4. IN-PAGE PUSH - zone 12333936 -->
+<script>(function(s){s.dataset.zone='12333936',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<!-- 5. VIGNETTE BANNER - zone 12333938 -->
+<script>(function(s){s.dataset.zone='12333938',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+<!-- =================== END MONETAG AD SCRIPTS =================== -->
 
 <style>
+:root{
+  --bg:#0b0c10;--surface:#14161c;--surface2:#1d2028;--line:#262a34;
+  --accent:#e50914;--accent-dark:#b20710;--text:#f1f1f1;--muted:#9aa0ab;
+  --gold:#f5c518;--blue:#2b6fff;--green:#17b45a;--green-dark:#0d8a42;--radius:12px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{
- font-family:Arial,sans-serif;
- background:#090d19;
- color:white;
- min-height:100vh;
- display:flex;
- justify-content:center;
- padding:25px 16px;
-}
-.app{width:100%;max-width:430px}
-.header{text-align:center;padding:25px 10px}
-.logo{
- width:65px;height:65px;border-radius:20px;
- background:linear-gradient(135deg,#6757ff,#00c8ff);
- display:grid;place-items:center;
- font-size:28px;margin:auto auto 15px;
-}
-h1{font-size:25px}
-.subtitle{color:#929bb0;font-size:13px;margin-top:8px}
-.card{
- background:#151c2d;border:1px solid #28334a;
- border-radius:20px;padding:22px;margin-bottom:16px;
-}
-.label{color:#8f9bb2;font-size:12px}
-.status{
- display:flex;align-items:center;gap:9px;
- margin-top:12px;font-size:16px;font-weight:bold;
-}
-.dot{width:9px;height:9px;border-radius:50%;background:#888}
-.dot.active{background:#21dc9b;box-shadow:0 0 12px #21dc9b}
-.timer{
- text-align:center;padding:25px 0;
- font-size:52px;font-weight:bold;
- color:#66baff;
-}
-.timer small{display:block;font-size:12px;color:#8996aa}
-button{
- width:100%;padding:16px;border:0;border-radius:13px;
- font-size:16px;font-weight:bold;cursor:pointer;
- margin-top:12px;
-}
-.start{background:linear-gradient(90deg,#6555ff,#328cff);color:white}
-.next{background:#243b61;color:white}
-.stop{background:#35212c;color:#ff7187}
-button:disabled{opacity:.4;cursor:not-allowed}
-.info{font-size:12px;color:#8c9bb3;line-height:1.8;margin-top:16px}
-.counter{display:flex;justify-content:space-between;margin-top:14px}
-.counter strong{font-size:20px}
-.footer{text-align:center;color:#64718a;font-size:11px;padding:20px}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;min-height:100vh;display:flex;flex-direction:column}
+body.lock{overflow:hidden}
+button{font-family:inherit}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 16px}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(11,12,16,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--surface2)}
+.header-inner{max-width:1280px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.logo{font-size:1.7rem;font-weight:900;letter-spacing:.5px;color:var(--accent);text-decoration:none}
+.logo span{color:#fff}
+.search{position:relative;flex:1 1 100%;order:3}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;fill:none;stroke:var(--muted);stroke-width:2;stroke-linecap:round;pointer-events:none}
+.search input{width:100%;padding:12px 16px 12px 44px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:1rem;outline:none;-webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(229,9,20,.25)}
+@media(min-width:700px){.search{flex:1 1 auto;order:0;max-width:440px;margin-left:auto}}
+
+/* Ad containers: collapse when empty so layout never breaks */
+.ad-slot{width:100%;max-width:100%;margin:12px auto;text-align:center;overflow:hidden}
+.ad-slot:empty{display:none}
+.ad-slot iframe,.ad-slot img{max-width:100%}
+
+/* Filters */
+main{flex:1;width:100%}
+.filters{display:flex;gap:8px;overflow-x:auto;padding:14px 0 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:.92rem;font-weight:600;cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
+.chip:hover{border-color:var(--accent)}
+.chip:active{transform:scale(.96)}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin:14px 0 12px}
+.section-head h2{font-size:1.25rem;font-weight:800}
+.section-head span{font-size:.85rem;color:var(--muted)}
+
+/* Grid: 2 columns mobile, 3 tablet, 4 desktop, 5 wide desktop */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:28px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}}
+@media(min-width:1200px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--surface2);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;animation:rise .4s ease both}
+.card:hover{transform:translateY(-4px);border-color:rgba(229,9,20,.55);box-shadow:0 14px 30px rgba(0,0,0,.55)}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.poster{position:relative;aspect-ratio:2/3;overflow:hidden;cursor:pointer}
+.poster::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.2),transparent 55%)}
+.poster::after{content:"";position:absolute;left:0;right:0;bottom:0;height:50%;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.initial{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);z-index:1;font-size:5.5rem;font-weight:900;line-height:1;opacity:.2}
+.badge{position:absolute;top:10px;z-index:2;font-size:.72rem;font-weight:800;padding:3px 8px;border-radius:6px}
+.badge.q{left:10px;background:var(--accent);color:#fff}
+.badge.q.hd{background:var(--blue)}
+.badge.rate{right:10px;background:rgba(0,0,0,.72);color:var(--gold)}
+.badge.rate small{font-size:.62rem;font-weight:700;color:#fff;opacity:.8}
+.tag{position:absolute;left:10px;bottom:10px;z-index:2;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+
+.info{display:flex;flex-direction:column;gap:4px;padding:10px 10px 12px;flex:1}
+.title{font-size:.95rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{display:flex;gap:12px;font-size:.78rem;color:var(--muted);margin-bottom:6px}
+
+/* Buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;padding:10px 6px;border:0;border-radius:8px;color:#fff;font-size:.82rem;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .15s,filter .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn .ic{width:16px;height:16px;fill:currentColor;flex:0 0 auto}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-dark))}
+.btn-primary:hover{filter:brightness(1.12);box-shadow:0 6px 18px rgba(229,9,20,.4)}
+.btn-green{background:linear-gradient(135deg,var(--green),var(--green-dark))}
+.btn-green:hover{filter:brightness(1.12);box-shadow:0 6px 18px rgba(23,180,90,.35)}
+.watch{margin-top:auto}
+
+.empty{text-align:center;padding:48px 0;color:var(--muted)}
+
+/* Modal */
+.overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.overlay.open{opacity:1;visibility:visible}
+.modal{position:relative;width:100%;max-width:420px;max-height:calc(100vh - 32px);overflow-y:auto;padding:26px 20px 20px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;transform:translateY(24px) scale(.96);transition:transform .28s cubic-bezier(.2,.9,.3,1.2)}
+.overlay.open .modal{transform:none}
+.close{position:absolute;top:10px;right:10px;width:36px;height:36px;border:0;border-radius:50%;background:var(--surface2);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;transition:background .2s}
+.close:hover{background:var(--accent)}
+.m-badges{display:flex;justify-content:center;gap:8px;margin-bottom:10px}
+.m-badges .badge{position:static}
+.modal h3{font-size:1.35rem;font-weight:800;padding:0 28px}
+.m-meta{margin:6px 0 20px;font-size:.88rem;color:var(--muted)}
+.modal .btn{padding:15px 16px;font-size:1.02rem;border-radius:10px;margin-bottom:12px}
+.modal .btn .ic{width:20px;height:20px}
+.modal .btn-primary{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,9,20,.55)}70%{box-shadow:0 0 0 14px rgba(229,9,20,0)}100%{box-shadow:0 0 0 0 rgba(229,9,20,0)}}
+.m-note{font-size:.76rem;color:var(--muted)}
+
+/* Footer */
+.footer{border-top:1px solid var(--surface2);padding:22px 0 28px;text-align:center;font-size:.8rem;color:var(--muted)}
+.footer p+p{margin-top:4px}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-
 <body>
-<div class="app">
 
- <header class="header">
-  <div class="logo">M</div>
-  <h1>Monetag Ads Manager</h1>
-  <p class="subtitle">Telegram Mini App Advertising</p>
- </header>
+<!-- SVG icons (defined once, reused) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></symbol>
+</svg>
 
- <div class="card">
-  <div class="label">AD SESSION STATUS</div>
-  <div class="status">
-   <span class="dot" id="dot"></span>
-   <span id="status">Ready to start</span>
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="./">CINE<span>FLIX</span></a>
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="search" placeholder="Search movies..." autocomplete="off" aria-label="Search movies">
+    </div>
   </div>
-  <div class="counter">
-   <div>
-    <div class="label">Ad Requests</div>
-    <strong id="count">0</strong>
-   </div>
-   <div>
-    <div class="label">Completed</div>
-    <strong id="completed">0</strong>
-   </div>
-  </div>
- </div>
+</header>
 
- <div class="card">
-  <div class="label">AD SESSION TIMER</div>
-  <div class="timer" id="timer">
-   00
-   <small id="timerText">Waiting for action</small>
+<!-- ============ TOP AD CONTAINER (In-Page Push / Native Banner) ============ -->
+<div class="wrap"><div class="ad-slot" id="ad-top"><!-- PASTE MONETAG CODE HERE --></div></div>
+
+<main class="wrap">
+  <div class="filters" id="filters">
+    <button class="chip active" type="button" data-cat="All" aria-pressed="true">All</button>
+    <button class="chip" type="button" data-cat="Action" aria-pressed="false">Action</button>
+    <button class="chip" type="button" data-cat="Sci-Fi" aria-pressed="false">Sci-Fi</button>
+    <button class="chip" type="button" data-cat="Thriller" aria-pressed="false">Thriller</button>
+    <button class="chip" type="button" data-cat="Drama" aria-pressed="false">Drama</button>
   </div>
 
-  <button class="start" id="start">SHOW AD</button>
-  <button class="next" id="next" disabled>SHOW NEXT AD</button>
-  <button class="stop" id="stop" disabled>STOP ADS</button>
+  <div class="section-head">
+    <h2>Latest movies</h2>
+    <span id="count"></span>
+  </div>
 
-  <p class="info" id="message">
-   Show Ads চাপলে একটি বিজ্ঞাপন চালু হবে।
-   বিজ্ঞাপন বন্ধ হলে ২ সেকেন্ড কাউন্টডাউন শেষে
-   পরবর্তী বিজ্ঞাপন দেখানোর জন্য বাটন চালু হবে।
-  </p>
- </div>
+  <section class="grid" id="grid" aria-live="polite"></section>
+  <p class="empty" id="empty" hidden>No movies found. Try a different title or category.</p>
+</main>
 
- <div class="footer">
-  Powered by Monetag SDK
- </div>
+<!-- ============ BOTTOM AD CONTAINER (In-Page Push / Native Banner) ============ -->
+<div class="wrap"><div class="ad-slot" id="ad-bottom"><!-- PASTE MONETAG CODE HERE --></div></div>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>&copy; <span id="year"></span> CineFlix. All titles shown are fictional placeholders.</p>
+    <p>Replace the catalog in the script with content you have the rights to distribute.</p>
+  </div>
+</footer>
+
+<!-- ============ SERVER MODAL ============ -->
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="close" id="close" type="button" aria-label="Close">&times;</button>
+    <div class="m-badges">
+      <span class="badge q" id="m-quality"></span>
+      <span class="badge rate" id="m-rate"></span>
+    </div>
+    <h3 id="m-title"></h3>
+    <p class="m-meta" id="m-meta"></p>
+
+    <!-- Monetag SmartLink (Direct Link) -->
+    <a class="btn btn-primary" href="https://uplcm.com/4/12333944" target="_blank" rel="noopener noreferrer sponsored">
+      <svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>Stream HD Server 1
+    </a>
+    <a class="btn btn-green" href="https://uplcm.com/4/12333944" target="_blank" rel="noopener noreferrer sponsored">
+      <svg class="ic" aria-hidden="true"><use href="#i-dl"/></svg>Fast Download Server 2
+    </a>
+    <p class="m-note">Links open in a new tab.</p>
+  </div>
 </div>
 
 <script>
-const tg = window.Telegram?.WebApp;
-tg?.ready();
-tg?.expand();
+(function () {
+  'use strict';
 
-const startBtn = document.getElementById("start");
-const nextBtn = document.getElementById("next");
-const stopBtn = document.getElementById("stop");
+  /* ---- Catalog (12 placeholder movies). Replace with your own data. ---- */
+  var MOVIES = [
+    { id: 1,  title: "Crimson Protocol",      year: 2025, genre: "Action",   quality: "4K",    rating: 7.8, duration: "2h 12m", hue: 0 },
+    { id: 2,  title: "Nebula Drift",          year: 2026, genre: "Sci-Fi",   quality: "4K",    rating: 8.2, duration: "2h 28m", hue: 225 },
+    { id: 3,  title: "The Silent Ledger",     year: 2024, genre: "Thriller", quality: "1080p", rating: 7.4, duration: "1h 48m", hue: 165 },
+    { id: 4,  title: "Paper Lanterns",        year: 2025, genre: "Drama",    quality: "1080p", rating: 8.0, duration: "2h 05m", hue: 35 },
+    { id: 5,  title: "Iron Horizon",          year: 2024, genre: "Action",   quality: "1080p", rating: 6.9, duration: "1h 55m", hue: 18 },
+    { id: 6,  title: "Echo Station 9",        year: 2026, genre: "Sci-Fi",   quality: "4K",    rating: 7.6, duration: "2h 02m", hue: 270 },
+    { id: 7,  title: "Midnight Verdict",      year: 2025, genre: "Thriller", quality: "4K",    rating: 8.1, duration: "2h 09m", hue: 200 },
+    { id: 8,  title: "Broken Compass",        year: 2023, genre: "Drama",    quality: "1080p", rating: 7.2, duration: "1h 52m", hue: 320 },
+    { id: 9,  title: "Ashes of Valor",        year: 2026, genre: "Action",   quality: "4K",    rating: 7.5, duration: "2h 20m", hue: 345 },
+    { id: 10, title: "Quantum Garden",        year: 2024, genre: "Sci-Fi",   quality: "1080p", rating: 7.9, duration: "2h 15m", hue: 140 },
+    { id: 11, title: "Last Train to Kestrel", year: 2023, genre: "Thriller", quality: "1080p", rating: 7.1, duration: "1h 44m", hue: 95 },
+    { id: 12, title: "Salt and Silence",      year: 2025, genre: "Drama",    quality: "4K",    rating: 8.4, duration: "2h 31m", hue: 255 }
+  ];
 
-const statusEl = document.getElementById("status");
-const timerEl = document.getElementById("timer");
-const timerText = document.getElementById("timerText");
-const message = document.getElementById("message");
-const dot = document.getElementById("dot");
+  var state = { cat: "All", q: "" };
+  var lastFocus = null;
 
-let running = false;
-let busy = false;
-let requests = 0;
-let completed = 0;
-let countdown = null;
+  var grid = document.getElementById("grid");
+  var empty = document.getElementById("empty");
+  var count = document.getElementById("count");
+  var search = document.getElementById("search");
+  var filters = document.getElementById("filters");
+  var overlay = document.getElementById("overlay");
+  var closeBtn = document.getElementById("close");
 
-function status(text, active=false){
- statusEl.textContent=text;
- dot.className=active?"dot active":"dot";
-}
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-function clearCountdown(){
- if(countdown){
-  clearInterval(countdown);
-  countdown=null;
- }
-}
+  function cardHTML(m, i) {
+    var h2 = (m.hue + 45) % 360;
+    var hd = m.quality === "4K" ? "" : " hd";
+    var rating = m.rating.toFixed(1);
+    var initial = m.title.replace(/^The\s+/, "").charAt(0);
+    return '<article class="card" style="animation-delay:' + Math.min(i * 40, 400) + 'ms">' +
+      '<div class="poster" data-id="' + m.id + '" style="background:linear-gradient(165deg,hsl(' + m.hue + ',65%,38%),hsl(' + h2 + ',60%,12%))">' +
+        '<span class="badge q' + hd + '">' + m.quality + '</span>' +
+        '<span class="badge rate" aria-label="IMDb rating ' + rating + '"><small>IMDb</small> ' + rating + '</span>' +
+        '<span class="initial" aria-hidden="true">' + initial + '</span>' +
+        '<span class="tag">' + m.genre + '</span>' +
+      '</div>' +
+      '<div class="info">' +
+        '<h3 class="title" title="' + m.title + '">' + m.title + '</h3>' +
+        '<p class="meta"><span>' + m.year + '</span><span>' + m.duration + '</span></p>' +
+        '<button class="btn btn-primary watch" type="button" data-id="' + m.id + '">' +
+          '<svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>Watch / Download' +
+        '</button>' +
+      '</div>' +
+    '</article>';
+  }
 
-function update(){
- document.getElementById("count").textContent=requests;
- document.getElementById("completed").textContent=completed;
-}
+  function render() {
+    var q = state.q.trim().toLowerCase();
+    var list = MOVIES.filter(function (m) {
+      var inCat = state.cat === "All" || m.genre === state.cat;
+      var inText = !q || m.title.toLowerCase().indexOf(q) > -1 || m.genre.toLowerCase().indexOf(q) > -1;
+      return inCat && inText;
+    });
+    grid.innerHTML = list.map(cardHTML).join("");
+    empty.hidden = list.length > 0;
+    count.textContent = list.length + (list.length === 1 ? " movie" : " movies");
+  }
 
-function stop(){
- running=false;
- busy=false;
- clearCountdown();
+  /* ---- Modal ---- */
+  function openModal(id) {
+    var m = MOVIES.filter(function (x) { return x.id === id; })[0];
+    if (!m) return;
+    var q = document.getElementById("m-quality");
+    q.textContent = m.quality;
+    q.className = "badge q" + (m.quality === "4K" ? "" : " hd");
+    document.getElementById("m-rate").innerHTML = "<small>IMDb</small> " + m.rating.toFixed(1);
+    document.getElementById("m-title").textContent = m.title;
+    document.getElementById("m-meta").textContent = m.year + " | " + m.genre + " | " + m.duration;
+    lastFocus = document.activeElement;
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lock");
+    closeBtn.focus();
+  }
 
- startBtn.disabled=false;
- nextBtn.disabled=true;
- stopBtn.disabled=true;
+  function closeModal() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lock");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
 
- status("Session stopped");
- timerEl.firstChild.textContent="00";
- timerText.textContent="Stopped";
- message.textContent="বিজ্ঞাপন সেশন বন্ধ করা হয়েছে।";
-}
-
-async function showAd(){
- if(!running || busy) return;
-
- if(typeof window.show_12308086 !== "function"){
-  status("SDK not loaded");
-  message.textContent="Monetag SDK পাওয়া যায়নি। ইন্টারনেট ও SDK লোড পরীক্ষা করুন।";
-  return;
- }
-
- busy=true;
- nextBtn.disabled=true;
- startBtn.disabled=true;
- stopBtn.disabled=false;
-
- requests++;
- update();
-
- status("Loading advertisement",true);
- timerEl.firstChild.textContent="...";
- timerText.textContent="Loading";
- message.textContent="বিজ্ঞাপন লোড হচ্ছে...";
-
- try{
-  const result=await window.show_12308086({
-   type:"end",
-   requestVar:"telegram_manual_ad"
+  /* ---- Events ---- */
+  grid.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-id]");
+    if (el) openModal(parseInt(el.getAttribute("data-id"), 10));
   });
 
-  completed++;
-  update();
+  filters.addEventListener("click", function (e) {
+    var btn = e.target.closest(".chip");
+    if (!btn) return;
+    state.cat = btn.getAttribute("data-cat");
+    Array.prototype.forEach.call(filters.querySelectorAll(".chip"), function (c) {
+      var on = c === btn;
+      c.classList.toggle("active", on);
+      c.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+    render();
+  });
 
-  if(!running) return;
+  search.addEventListener("input", function () {
+    state.q = search.value;
+    render();
+  });
 
-  status("Advertisement completed",true);
-  message.textContent="বিজ্ঞাপন সেশন সম্পন্ন হয়েছে।";
-  await waitForNext();
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) closeModal();
+  });
 
- }catch(error){
-  if(!running) return;
+  document.addEventListener("keydown", function (e) {
+    if (!overlay.classList.contains("open")) return;
+    if (e.key === "Escape") { closeModal(); return; }
+    if (e.key === "Tab") {
+      var f = overlay.querySelectorAll("a[href],button");
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
 
-  status("Advertisement unavailable");
-  message.textContent="বিজ্ঞাপন পাওয়া যায়নি: "+(error.message||"Unknown error");
-  await waitForNext();
-
- }finally{
-  busy=false;
- }
-}
-
-function waitForNext(){
- return new Promise(resolve=>{
-  let seconds=2;
-  timerEl.firstChild.textContent=seconds;
-  timerText.textContent="Next ad available in";
-  status("Waiting for next action",true);
-
-  countdown=setInterval(()=>{
-   if(!running){
-    clearCountdown();
-    resolve();
-    return;
-   }
-
-   seconds--;
-   timerEl.firstChild.textContent=seconds;
-
-   if(seconds<=0){
-    clearCountdown();
-    timerEl.firstChild.textContent="00";
-    timerText.textContent="Ready for next ad";
-
-    nextBtn.disabled=false;
-    startBtn.disabled=true;
-
-    message.textContent="পরবর্তী বিজ্ঞাপনের জন্য SHOW NEXT AD চাপুন।";
-    resolve();
-   }
-  },1000);
- });
-}
-
-startBtn.addEventListener("click",()=>{
- if(busy)return;
- running=true;
- stopBtn.disabled=false;
- showAd();
-});
-
-nextBtn.addEventListener("click",()=>{
- if(!running || busy)return;
- showAd();
-});
-
-stopBtn.addEventListener("click",stop);
+  render();
+})();
 </script>
 </body>
 </html>
